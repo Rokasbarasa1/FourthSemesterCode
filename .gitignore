@@ -13,6 +13,10 @@
 *.sln.docstates
 *.pdf
 *.docx
+*.zip
+*.png
+*.asta
+*.docx
 DAI1/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
