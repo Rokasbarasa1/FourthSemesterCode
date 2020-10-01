@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GroceryFragment"
+    tools:context=".View.GroceryFragment"
     android:background="@color/colorPrimary">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:textColor="#ffff"
         android:textSize="30dp"
