@@ -1,54 +1,76 @@
-package com.example.newmyrecipe.View;
+package com.example.version2myrecipe.View;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.newmyrecipe.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.version2myrecipe.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
-
-    private AnimationUtils animations = new AnimationUtils();
     //private BottomNavigationView bottomNavigationView;
-    private LinearLayout ingredientsList; // getting the instance of this crashes the app
     private Animation rotateOpen;
     private Animation rotateClose;
     private Animation fromBottom;
     private Animation toBottom;
-
-
     private FloatingActionButton add_btn;
     private FloatingActionButton trash_btn;
     private FloatingActionButton create_btn;
-    private Button button;
+    private LinearLayout tagList;
+    private LayoutInflater vi;
+    private View v;
+    private TextView tx;
     private boolean clicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.create_recipe_layout);
-        button.findViewById(R.id.button1);
-
-        setContentView(R.layout.tag_view_layout);
+        setContentView(R.layout.activity_main);
 
 
-        add_btn.findViewById(R.id.add_btn);
-        trash_btn.findViewById(R.id.trash_btn);
-        create_btn.findViewById(R.id.create_btn);
+        //For programatic adding of tag sections
+        vi = (LayoutInflater) getApplicationContext().getSystemService(getApplicationContext().LAYOUT_INFLATER_SERVICE);
+        v = getLayoutInflater().inflate(R.layout.new_tag_layout, null);
+        tagList = findViewById(R.id.tagList);
 
+        TextView text = new TextView(this);
+        v.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT
+        ));
+        text.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT
+        ));
+        text.setHeight(75);
+
+        /*
+        setContentView(R.layout.activity_main);
+        bottomNavigationView = findViewById(R.id.bottomView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavMethod);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, new RecipesFragment()).commit();
+
+         */
+
+        //Expandable button thing
+        add_btn = findViewById(R.id.add_btn);
+        trash_btn = findViewById(R.id.trash_btn);
+        create_btn = findViewById(R.id.create_btn);
+
+        rotateOpen = AnimationUtils.loadAnimation(this, R.anim.rotate_open_anim);
+        rotateClose = AnimationUtils.loadAnimation(this, R.anim.rotate_close_anim);
+        fromBottom = AnimationUtils.loadAnimation(this, R.anim.from_bottom_anim);
+        toBottom = AnimationUtils.loadAnimation(this, R.anim.to_bottom_anim);
         add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,28 +81,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Clicked trash button", Toast.LENGTH_SHORT).show();
+                Intent menuIntent = new Intent(MainActivity.this, RecipeScreen.class);
+                startActivity(menuIntent);
             }
         });
         create_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Clicked create button", Toast.LENGTH_SHORT).show();
+                if(v.getParent() != null) {
+                    ((ViewGroup)v.getParent()).removeView(v);
+                }
+                tagList.addView(v, 1);
+
             }
         });
-
-        rotateOpen = animations.loadAnimation(this, R.anim.rotate_open_anim);
-        rotateClose = animations.loadAnimation(this, R.anim.rotate_close_anim);
-        fromBottom = animations.loadAnimation(this, R.anim.from_bottom_anim);
-        toBottom = animations.loadAnimation(this, R.anim.to_bottom_anim);
-
-        //ingredientsList.findViewById(R.id.ingredientsList);
-        /*
-        setContentView(R.layout.activity_main);
-        bottomNavigationView = findViewById(R.id.bottomView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavMethod);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, new RecipesFragment()).commit();
-
-         */
     }
 
     private void onAddButtonClicked() {
@@ -90,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
             clicked = true;
         else
             clicked = false;
-
     }
 
     @SuppressLint("RestrictedApi")
@@ -114,17 +128,9 @@ public class MainActivity extends AppCompatActivity {
             create_btn.startAnimation(toBottom);
             add_btn.startAnimation(rotateClose);
         }
-
     }
 
-
-
-    public void createNewLineOfIngredient(){ //Running this also crashes the app
-        //TODO fix dynam add code
-        //ConstraintLayout ingredientView = findViewById(R.id.ingredientView);
-        //ingredientsList.addView(ingredientView);
-    }
-/*
+    /*
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavMethod = new
             BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
