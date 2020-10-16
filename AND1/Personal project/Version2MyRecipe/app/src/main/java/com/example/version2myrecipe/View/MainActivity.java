@@ -3,8 +3,10 @@ package com.example.version2myrecipe.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Clicked trash button", Toast.LENGTH_SHORT).show();
                 Intent menuIntent = new Intent(MainActivity.this, RecipeScreen.class);
-                startActivity(menuIntent);
+                startActivityForResult(menuIntent, 1);
             }
         });
         create_btn.setOnClickListener(new View.OnClickListener() {
@@ -93,9 +95,20 @@ public class MainActivity extends AppCompatActivity {
                     ((ViewGroup)v.getParent()).removeView(v);
                 }
                 tagList.addView(v, 1);
-
+                Intent menuIntent = new Intent(MainActivity.this, Login.class);
+                menuIntent.putExtra("name", 21);
+                startActivity(menuIntent);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1)
+            if (resultCode == RESULT_OK) {
+                Log.d("Main", "Got result");
+            }
     }
 
     private void onAddButtonClicked() {
@@ -153,4 +166,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
      */
+
+
 }

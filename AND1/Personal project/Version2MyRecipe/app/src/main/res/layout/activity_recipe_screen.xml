@@ -223,37 +223,52 @@
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="10dp" />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="103dp">
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="151dp"
+                    android:layout_height="47dp"
+                    android:drawableStart="@drawable/confirm"
+                    android:onClick="finishRecipe"
+                    android:src="@drawable/confirm"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/progressBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/button3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="151dp"
+                    android:layout_height="47dp"
+                    android:drawableStart="@drawable/back"
+                    android:onClick="goBack"
+                    android:src="@drawable/back"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@+id/progressBar"
+                    app:layout_constraintEnd_toStartOf="@+id/button"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         </LinearLayout>
     </ScrollView>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:background="#D5C4C4">
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="151dp"
-            android:layout_height="47dp"
-            android:drawableLeft="@drawable/confirm"
-            android:src="@drawable/confirm"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button3"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="151dp"
-            android:layout_height="47dp"
-            android:drawableLeft="@drawable/back"
-            android:src="@drawable/back"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toStartOf="@+id/button"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
