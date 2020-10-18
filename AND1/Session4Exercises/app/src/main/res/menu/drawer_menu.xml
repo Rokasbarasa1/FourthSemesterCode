@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showin = "navigation_view" >
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_message"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Camera"/>
+        <item android:id="@+id/nav_chat"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Chat"/>
+        <item android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Profile"/>
+    </group>
+
+    <item android:title="Communicata">
+        <menu>
+            <item android:id="@+id/nav_share"
+                android:icon="@drawable/bell_thing"
+                android:title="share"/>
+            <item android:id="@+id/nav_send"
+                android:icon="@drawable/ic_launcher_foreground"
+                android:title="send"/>
+        </menu>
+    </item>
+</menu>
