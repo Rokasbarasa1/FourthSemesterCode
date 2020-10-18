@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include "mystr.h"
+int my_strlen(const char* str){
+	int length = 0;
+	int index = 0;
+	bool didNotReachEnd = True;
+	while(didNotReachEnd){
+		if(*str[0] = '\0'){
+			didNotReachEnd = false;
+		}else{
+			length++;
+		}
+	}
+	return length;
+}
+
+int my_strcmp(const char* str1, const char* str2){	
+	if(my_strlen(*str1) == my_strlen(*str2){
+		for(int i = 0; i <= my_strlen(*str1){
+			if(*str[i] != *str[i]){
+				return 0;
+			}
+		}
+	} else {
+		return 0;
+	}
+	return 1;
+}
+
+char* my_strcpy(char* dest, const char* src){
+	for(int i = 0; i <= *src; i++){
+		*dest[i] = *src[i];
+	}
+	return *dest;
+}
+
+char* my_strdup(

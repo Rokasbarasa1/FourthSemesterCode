@@ -10,7 +10,7 @@ int main(void) {
 	while (read_line(line) != '\0')
 	{
 		my_to_upper(*line, *upper);
-		printf("Length: %d\t%s\n", line_length, upper);
+		printf("Length: %d\t%s\n", upper);
 	}
 	return 0;
 }
