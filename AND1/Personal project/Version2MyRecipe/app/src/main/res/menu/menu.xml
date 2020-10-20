@@ -11,5 +11,6 @@
     <item
         android:id="@+id/grocery"
         android:title="Grocery"
-        android:icon="@drawable/grocery"/>
+        android:icon="@drawable/grocery"
+        />
 </menu>

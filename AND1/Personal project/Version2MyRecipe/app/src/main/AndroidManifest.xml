@@ -11,13 +11,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".View.WebViewActivity"></activity>
-        <activity android:name=".View.Login" />
-        <activity android:name=".View.RecipeScreen" />
-        <activity android:name=".View.MainActivity">
+        <activity
+            android:name=".View.Login" />
+        <activity
+            android:name=".View.RecipeScreen"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity
+            android:name=".View.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

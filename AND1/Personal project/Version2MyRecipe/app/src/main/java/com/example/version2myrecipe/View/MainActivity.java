@@ -1,6 +1,10 @@
 package com.example.version2myrecipe.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -17,133 +22,46 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.version2myrecipe.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MainActivity extends AppCompatActivity {
-    //private BottomNavigationView bottomNavigationView;
-    private Animation rotateOpen;
-    private Animation rotateClose;
-    private Animation fromBottom;
-    private Animation toBottom;
-    private FloatingActionButton add_btn;
-    private FloatingActionButton trash_btn;
-    private FloatingActionButton create_btn;
-    private LinearLayout tagList;
-    private LayoutInflater vi;
-    private View v;
-    private TextView tx;
-    private boolean clicked = false;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements TagAdapter.OnListItemClickListener {
+    BottomNavigationView bottomNavigationView;
+    RecyclerView tagList;
+    TagAdapter tagAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        //For programatic adding of tag sections
-        vi = (LayoutInflater) getApplicationContext().getSystemService(getApplicationContext().LAYOUT_INFLATER_SERVICE);
-        v = getLayoutInflater().inflate(R.layout.new_tag_layout, null);
-        tagList = findViewById(R.id.tagList);
-
-        TextView text = new TextView(this);
-        v.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT
-        ));
-        text.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT
-        ));
-        text.setHeight(75);
-
+        //Recycler view
         /*
-        setContentView(R.layout.activity_main);
+        List<Tag> tags = new ArrayList<>();
+        tags.add(new Tag("kaka"));
+        tags.add(new Tag("Mouse"));
+        tags.add(new Tag("pet"));
+        tags.add(new Tag("Dog"));
+        tags.add(new Tag("Cow"));
+        tags.add(new Tag("Rat"));
+        tags.add(new Tag("Corona"));
+        tagList = findViewById(R.id.rv);
+        tagList.hasFixedSize();
+        tagList.setLayoutManager(new LinearLayoutManager(this));
+        tagAdapter = new TagAdapter(tags, this);
+        tagList.setAdapter(tagAdapter);
+*/
+        //Bottom navigation button
         bottomNavigationView = findViewById(R.id.bottomView);
         bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavMethod);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, new RecipesFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RecipesFragment()).commit();
 
-         */
 
-        //Expandable button thing
-        add_btn = findViewById(R.id.add_btn);
-        trash_btn = findViewById(R.id.trash_btn);
-        create_btn = findViewById(R.id.create_btn);
 
-        rotateOpen = AnimationUtils.loadAnimation(this, R.anim.rotate_open_anim);
-        rotateClose = AnimationUtils.loadAnimation(this, R.anim.rotate_close_anim);
-        fromBottom = AnimationUtils.loadAnimation(this, R.anim.from_bottom_anim);
-        toBottom = AnimationUtils.loadAnimation(this, R.anim.to_bottom_anim);
-        add_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onAddButtonClicked();
-            }
-        });
-        trash_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Clicked trash button", Toast.LENGTH_SHORT).show();
-                Intent menuIntent = new Intent(MainActivity.this, RecipeScreen.class);
-                startActivityForResult(menuIntent, 1);
-            }
-        });
-        create_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Clicked create button", Toast.LENGTH_SHORT).show();
-                if(v.getParent() != null) {
-                    ((ViewGroup)v.getParent()).removeView(v);
-                }
-                tagList.addView(v, 1);
-                Intent menuIntent = new Intent(MainActivity.this, Login.class);
-                menuIntent.putExtra("name", 21);
-                startActivity(menuIntent);
-            }
-        });
     }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1)
-            if (resultCode == RESULT_OK) {
-                Log.d("Main", "Got result");
-            }
-    }
-
-    private void onAddButtonClicked() {
-        setVisibility(clicked);
-        setAnimation(clicked);
-        if(!clicked)
-            clicked = true;
-        else
-            clicked = false;
-    }
-
-    @SuppressLint("RestrictedApi")
-    private void setVisibility(Boolean clicked) {
-        if(!clicked){
-            trash_btn.setVisibility(View.VISIBLE);
-            create_btn.setVisibility(View.VISIBLE);
-        } else {
-            trash_btn.setVisibility(View.INVISIBLE);
-            create_btn.setVisibility(View.INVISIBLE);
-        }
-    }
-
-    private void setAnimation(Boolean clicked) {
-        if(!clicked){
-            trash_btn.startAnimation(fromBottom);
-            create_btn.startAnimation(fromBottom);
-            add_btn.startAnimation(rotateOpen);
-        }else {
-            trash_btn.startAnimation(toBottom);
-            create_btn.startAnimation(toBottom);
-            add_btn.startAnimation(rotateClose);
-        }
-    }
-
-    /*
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavMethod = new
             BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
@@ -160,12 +78,13 @@ public class MainActivity extends AppCompatActivity {
                             fragment = new GroceryFragment();
                             break;
                     }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
-
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
                     return true;
                 }
             };
-     */
 
-
+    @Override
+    public void onClick(int position) {
+        Toast.makeText(getApplicationContext(), ""+ position,Toast.LENGTH_SHORT).show();
+    }
 }

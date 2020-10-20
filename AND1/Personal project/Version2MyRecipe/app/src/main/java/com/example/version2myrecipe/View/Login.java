@@ -22,7 +22,6 @@ public class Login extends AppCompatActivity {
     EditText email;
     EditText password;
     Button login;
-    Switch switch1;
     ImageView imageView;
 
     @Override
@@ -36,17 +35,7 @@ public class Login extends AppCompatActivity {
         email = findViewById(R.id.editTextTextEmailAddress);
         password = findViewById(R.id.editTextTextPassword);
         login = findViewById(R.id.login);
-        switch1 = findViewById(R.id.switch1);
         imageView = findViewById(R.id.imageView);
-        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                        imageView.setImageResource(R.drawable.trash);
-                } else {
-                        imageView.setImageResource(R.drawable.recipes);
-                }
-            }
-        });
     }
 
     public void login(View view) {
@@ -57,28 +46,5 @@ public class Login extends AppCompatActivity {
             login.setText(R.string.email_message);
             this.finish();
         }
-    }
-
-
-    public void google(View view) {
-        String action = Intent.ACTION_VIEW;
-        Uri uri = Uri.parse("http://www.google.com");
-
-        Intent intent = new Intent(action,uri);
-        startActivity(intent);
-    }
-
-    public void emailRokas(View view) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"rokasbarasa@gmail.com"});
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Hi Mom!");
-        intent.putExtra(Intent.EXTRA_TEXT, "I learned a lot in class today");
-        startActivity(intent);
-    }
-
-    public void webView(View view) {
-        Intent intent = new Intent(Login.this, WebViewActivity.class);
-        startActivity(intent);
     }
 }
