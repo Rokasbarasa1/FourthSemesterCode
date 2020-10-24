@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/ESW1/CLion Projects/Student.h
+
+C:/ESW1/CLion Projects/StudentList.c
+StudentList.h
+C:/ESW1/CLion Projects/StudentList.h
+list.h
+C:/ESW1/CLion Projects/list.h
+
+C:/ESW1/CLion Projects/StudentList.h
+stdint.h
+-
+Student.h
+C:/ESW1/CLion Projects/Student.h
+
+C:/ESW1/CLion Projects/list.h
+stdint.h
+-
+

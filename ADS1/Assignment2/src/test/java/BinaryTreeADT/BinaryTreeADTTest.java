@@ -31,7 +31,10 @@ class BinaryTreeADTTest {
             assertThrows(NullPointerException.class, tree::getRoot);
         }
 
+        @Test
+        void addElement(){
 
+        }
     }
 
 }

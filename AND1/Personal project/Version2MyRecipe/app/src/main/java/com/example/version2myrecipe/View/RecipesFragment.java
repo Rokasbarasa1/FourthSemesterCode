@@ -43,13 +43,17 @@ public class RecipesFragment extends Fragment implements TagAdapter.OnListItemCl
         final View rootView = inflater.inflate(R.layout.fragment_recipes, container, false);
 
         List<Tag> tags = new ArrayList<>();
-        tags.add(new Tag("kaka"));
-        tags.add(new Tag("Mouse"));
-        tags.add(new Tag("pet"));
-        tags.add(new Tag("Dog"));
-        tags.add(new Tag("Cow"));
-        tags.add(new Tag("Rat"));
-        tags.add(new Tag("Corona"));
+        tags.add(new Tag("Asian"));
+        tags.add(new Tag("Catalan"));
+        tags.add(new Tag("Spanish"));
+        tags.add(new Tag("Savory"));
+        tags.add(new Tag("Sweet"));
+        tags.add(new Tag("Easy"));
+        tags.add(new Tag("Complicated"));
+        tags.add(new Tag("Chicken"));
+        tags.add(new Tag("Beef"));
+        tags.add(new Tag("Pork"));
+        tags.add(new Tag("Complicated"));
         tagList = rootView.findViewById(R.id.rv);
         tagList.hasFixedSize();
         tagList.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
