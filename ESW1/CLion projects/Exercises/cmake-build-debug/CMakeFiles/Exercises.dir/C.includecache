@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/List.c
+List.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/List.h
+stdlib.h
+-
+
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/List.h
+stdint.h
+-
+

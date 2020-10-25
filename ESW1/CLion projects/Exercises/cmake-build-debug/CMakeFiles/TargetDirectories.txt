@@ -1,0 +1,3 @@
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/cmake-build-debug/CMakeFiles/Exercises.dir
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/cmake-build-debug/CMakeFiles/rebuild_cache.dir
