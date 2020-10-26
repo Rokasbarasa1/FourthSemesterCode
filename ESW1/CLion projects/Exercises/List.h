@@ -7,11 +7,11 @@
 #include <stdint.h>
 
 typedef enum {
-    OK,
-    EMPTY,
-    NOT_FOUND,
-    NULLL,
-    ERROR
+    OK, //Everything OK
+    EMPTY, // List Empty
+    NOT_FOUND, // Item not found
+    NULLL, // List pointer is null
+    ERROR //Function could not be completed due to memory limit
 }list_listReturnCode;
 
 typedef struct List* list_t;
