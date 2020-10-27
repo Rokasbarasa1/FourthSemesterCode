@@ -12,13 +12,13 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".View.Login" />
+            android:name=".views.ActivityLogin" />
         <activity
-            android:name=".View.RecipeScreen"
+            android:name=".views.ActivityCreateRecipe"
             android:windowSoftInputMode="adjustPan"
             />
         <activity
-            android:name=".View.MainActivity">
+            android:name=".views.ActivityMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

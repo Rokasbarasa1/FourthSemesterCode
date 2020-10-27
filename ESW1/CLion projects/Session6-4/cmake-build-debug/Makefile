@@ -181,6 +181,60 @@ Humidity.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\Humidity.c.s
 .PHONY : Humidity.c.s
 
+HumidityDriver.obj: HumidityDriver.c.obj
+
+.PHONY : HumidityDriver.obj
+
+# target to build an object file
+HumidityDriver.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\HumidityDriver.c.obj
+.PHONY : HumidityDriver.c.obj
+
+HumidityDriver.i: HumidityDriver.c.i
+
+.PHONY : HumidityDriver.i
+
+# target to preprocess a source file
+HumidityDriver.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\HumidityDriver.c.i
+.PHONY : HumidityDriver.c.i
+
+HumidityDriver.s: HumidityDriver.c.s
+
+.PHONY : HumidityDriver.s
+
+# target to generate assembly for a file
+HumidityDriver.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\HumidityDriver.c.s
+.PHONY : HumidityDriver.c.s
+
+List.obj: List.c.obj
+
+.PHONY : List.obj
+
+# target to build an object file
+List.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\List.c.obj
+.PHONY : List.c.obj
+
+List.i: List.c.i
+
+.PHONY : List.i
+
+# target to preprocess a source file
+List.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\List.c.i
+.PHONY : List.c.i
+
+List.s: List.c.s
+
+.PHONY : List.s
+
+# target to generate assembly for a file
+List.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\List.c.s
+.PHONY : List.c.s
+
 Room.obj: Room.c.obj
 
 .PHONY : Room.obj
@@ -207,6 +261,33 @@ Room.s: Room.c.s
 Room.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\Room.c.s
 .PHONY : Room.c.s
+
+TempDriver.obj: TempDriver.c.obj
+
+.PHONY : TempDriver.obj
+
+# target to build an object file
+TempDriver.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\TempDriver.c.obj
+.PHONY : TempDriver.c.obj
+
+TempDriver.i: TempDriver.c.i
+
+.PHONY : TempDriver.i
+
+# target to preprocess a source file
+TempDriver.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\TempDriver.c.i
+.PHONY : TempDriver.c.i
+
+TempDriver.s: TempDriver.c.s
+
+.PHONY : TempDriver.s
+
+# target to generate assembly for a file
+TempDriver.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\TempDriver.c.s
+.PHONY : TempDriver.c.s
 
 Temperature.obj: Temperature.c.obj
 
@@ -277,9 +358,18 @@ help:
 	@echo ... Humidity.obj
 	@echo ... Humidity.i
 	@echo ... Humidity.s
+	@echo ... HumidityDriver.obj
+	@echo ... HumidityDriver.i
+	@echo ... HumidityDriver.s
+	@echo ... List.obj
+	@echo ... List.i
+	@echo ... List.s
 	@echo ... Room.obj
 	@echo ... Room.i
 	@echo ... Room.s
+	@echo ... TempDriver.obj
+	@echo ... TempDriver.i
+	@echo ... TempDriver.s
 	@echo ... Temperature.obj
 	@echo ... Temperature.i
 	@echo ... Temperature.s

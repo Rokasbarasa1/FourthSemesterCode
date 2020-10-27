@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".View.Login">
+    tools:context=".views.ActivityLogin">
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/loginTextPassword"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -21,12 +21,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/loginTextEmailAddress"
         app:layout_constraintVertical_bias="0.0" />
 
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/loginTextEmailAddress"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="280dp"
@@ -52,15 +52,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/loginTextPassword"
         app:layout_constraintVertical_bias="0.06" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/loginImageView"
         android:layout_width="154dp"
         android:layout_height="146dp"
         android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/loginTextEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

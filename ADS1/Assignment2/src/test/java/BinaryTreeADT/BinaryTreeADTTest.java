@@ -22,18 +22,23 @@ class BinaryTreeADTTest {
         }
 
         @Test
-        void testEmpty(){
+        void testEmptyOnEmptyTree(){
             assertTrue(tree.isEmpty());
         }
 
         @Test
-        void throwsExceptionWhenGetRoot(){
-            assertThrows(NullPointerException.class, tree::getRoot);
+        void sizeEmpty(){
+            assertEquals(tree.size(), 0);
         }
 
         @Test
-        void addElement(){
+        void containsEmpty(){
+            assertEquals(tree.contains(4), false);
+        }
 
+        @Test
+        void heightEmpty(){
+            assertEquals(tree.height(), 0);
         }
     }
 

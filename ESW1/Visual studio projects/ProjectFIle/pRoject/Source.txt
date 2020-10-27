@@ -1,5 +1,0 @@
-CALI1
-Second_line
-ThirdLine
-#
-LASTLINE_HAS_26_characters

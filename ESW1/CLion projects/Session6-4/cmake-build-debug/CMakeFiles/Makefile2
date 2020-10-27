@@ -78,12 +78,12 @@ clean: CMakeFiles\Session6_4.dir\clean
 CMakeFiles\Session6_4.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5,6 "Built target Session6_4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9 "Built target Session6_4"
 .PHONY : CMakeFiles\Session6_4.dir\all
 
 # Build rule for subdir invocation for target.
 CMakeFiles\Session6_4.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\cmake-build-debug\CMakeFiles" 6
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\cmake-build-debug\CMakeFiles" 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\cmake-build-debug\CMakeFiles" 0
 .PHONY : CMakeFiles\Session6_4.dir\rule

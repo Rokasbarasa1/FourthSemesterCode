@@ -1,0 +1,47 @@
+package com.example.version2myrecipe.views;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.version2myrecipe.R;
+import com.example.version2myrecipe.models.Ingredient;
+import com.example.version2myrecipe.adapter.IngredientAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class FragmentGrocery extends Fragment {
+    RecyclerView ingredientList;
+    IngredientAdapter ingredientAdapter;
+    List<Ingredient> ingredients;
+
+    public FragmentGrocery() {
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        final View rootView = inflater.inflate(R.layout.fragment_grocery, container, false);
+
+        //Ingredient shopping bag
+        ingredients = new ArrayList<>();
+        ingredients.add(new Ingredient("Coconut milk", 1f, "can"));
+        ingredients.add(new Ingredient("Basmati rice", 300f, "g"));
+        ingredients.add(new Ingredient("Chicken", 450f, "g"));
+        ingredients.add(new Ingredient("Curry paste", 3, "tablespoons"));
+        ingredients.add(new Ingredient("Salt", 1f, "teaspoon"));
+        ingredients.add(new Ingredient("Pepper", 0.5f, "teaspoon"));
+
+        ingredientList = rootView.findViewById(R.id.rv_grocery);
+        ingredientList.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
+        ingredientAdapter = new IngredientAdapter(ingredients);
+        ingredientList.setAdapter(ingredientAdapter);
+
+        return rootView;
+    }
+}

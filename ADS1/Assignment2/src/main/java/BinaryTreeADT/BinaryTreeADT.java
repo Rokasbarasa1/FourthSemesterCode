@@ -1,33 +1,103 @@
 package BinaryTreeADT;
 
-
-import BinaryTreeNodeADT.BinaryTreeNodeADT;
 import BinaryTreeNodeADT.IBinaryTreeNodeADT;
+import java.util.ArrayList;
 
 public class BinaryTreeADT implements IBinaryTreeADT{
-    IBinaryTreeNodeADT[] elements;
+    IBinaryTreeNodeADT element;
 
     public BinaryTreeADT() {
-        elements = new BinaryTreeNodeADT[100];
+        element = null;
     }
 
+    @Override
     public IBinaryTreeNodeADT getRoot() {
-        return elements[0];
+        if(element == null){
+            throw new NullPointerException();
+        }else {
+            return element;
+        }
     }
 
+    @Override
     public Boolean isEmpty() {
-        return elements.length == 0;
+        if(element == null){
+            return true;
+        } else {
+            return false;
+        }
     }
 
+    @Override
     public int size() {
-        return 0;
+        if(element == null){
+            return 0;
+        }else{
+            int size = findSizeOfTree(element);
+            return size;
+        }
     }
 
-    public boolean contains() {
-        return false;
+    @Override
+    public boolean contains(int value) {
+        if(element == null){
+            return false;
+        }else {
+            Boolean contains = false;
+            contains = doesTreeContainValue(element,value);
+            return false;
+        }
     }
 
+    @Override
+    public ArrayList<IBinaryTreeNodeADT> inOrder() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<IBinaryTreeNodeADT> preOrder() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<IBinaryTreeNodeADT> postOrder() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<IBinaryTreeNodeADT> levelOrder() {
+        return null;
+    }
+
+    @Override
     public int height() {
-        return 0;
+        if(element == null){
+            return 0;
+        }else {
+            return 0;
+        }
+    }
+
+    private int findSizeOfTree(IBinaryTreeNodeADT element) {
+        if(element.getLeftChild() != null && element.getRightChild() != null){
+            return 1 + findSizeOfTree(element.getLeftChild()) + findSizeOfTree(element.getRightChild());
+        } else if(element.getLeftChild() != null && element.getRightChild() == null){
+            return 1 + findSizeOfTree(element.getLeftChild());
+        } else if(element.getLeftChild() == null && element.getRightChild() != null){
+            return 1 + findSizeOfTree(element.getRightChild());
+        }
+        return 1;
+    }
+
+    private Boolean doesTreeContainValue(IBinaryTreeNodeADT element, int value) {
+        if(!element.isElementInitialized()){
+            return false;
+        }else if(element.getElement() == value){
+            return true;
+        } else if(element.getElement() >= value){
+            return doesTreeContainValue(element.getLeftChild(), value);
+        } else{
+            return doesTreeContainValue(element.getRightChild(), value);
+        }
     }
 }

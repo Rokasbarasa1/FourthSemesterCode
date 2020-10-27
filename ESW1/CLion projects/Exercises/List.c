@@ -14,7 +14,7 @@ typedef struct List {
     Node* head;
 } List;
 
-Node* list_findTail(Node* head) {
+static Node* list_findTail(Node* head) {
     if (!head->next) {
         return head;
     }else{
@@ -22,7 +22,7 @@ Node* list_findTail(Node* head) {
     }
 }
 
-uint16_t list_countToTail(Node* head) {
+static uint16_t list_countToTail(Node* head) {
     if (head->next == NULL) {
         return 1;
     }else{
@@ -30,7 +30,7 @@ uint16_t list_countToTail(Node* head) {
     }
 }
 
-Node* list_findNodeByIndex(Node* head, uint16_t index) {
+static Node* list_findNodeByIndex(Node* head, uint16_t index) {
     if (index != 0 && head->next) {
         return list_findNodeByIndex(head->next,index - 1);
     } else if(head){
@@ -40,7 +40,7 @@ Node* list_findNodeByIndex(Node* head, uint16_t index) {
     }
 }
 
-Node* list_findNodeByItem(Node* head, void** item) {
+static Node* list_findNodeByItem(Node* head, void** item) {
     if (head->value == *item) { //This works for ints
         return head;
     } else if(head->value == item){  //This if statement works for structs and strings
@@ -52,7 +52,7 @@ Node* list_findNodeByItem(Node* head, void** item) {
     }
 }
 
-Node* list_findParentNodeOfNode(Node* head, Node* childNode) {
+static Node* list_findParentNodeOfNode(Node* head, Node* childNode) {
     if (head->next == childNode) {
         return head;
     }else if (!head->next) {
@@ -62,15 +62,17 @@ Node* list_findParentNodeOfNode(Node* head, Node* childNode) {
     }
 }
 
-list_listReturnCode list_deleteNodesCascade(Node* head){
+static list_listReturnCode list_deleteNodesCascade(Node* head){
     if(!head){
         return OK;
     } else{
         if(head->next){
             Node* next = head->next;
+            free(head->value);
             free(head);
             return list_deleteNodesCascade(next);
         } else{
+            free(head->value);
             free(head);
             return OK;
         }
