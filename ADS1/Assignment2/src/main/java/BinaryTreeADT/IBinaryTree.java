@@ -1,11 +1,11 @@
 package BinaryTreeADT;
 
-import BinaryTreeNodeADT.IBinaryTreeNodeADT;
+import BinaryTreeNodeADT.IBinaryTreeNode;
 
 import java.util.ArrayList;
 
-public interface IBinaryTreeADT {
-    IBinaryTreeNodeADT getRoot();
+public interface IBinaryTree {
+    IBinaryTreeNode getRoot();
     Boolean isEmpty();
     int size();
     boolean contains(int value);

@@ -1,7 +1,4 @@
 package BinaryTreeNodeADT;
-
-import BinaryTreeADT.BinaryTreeADT;
-import BinaryTreeADT.IBinaryTreeADT;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -9,33 +6,43 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BinaryTreeNodeADTTest {
-    IBinaryTreeNodeADT node;
+    IBinaryTreeNode node;
 
     @Test
     void treeInstantiation(){
-        node = new BinaryTreeNodeADT(1);
+        node = new BinaryTreeNode(11);
     }
 
     @Nested
     class whenNew{
         @BeforeEach
         void instantiateTree(){
-            node = new BinaryTreeNodeADT(1);
+            node = new BinaryTreeNode(11);
         }
 
         @Test
-        void getElementEmpty(){
-            assertThrows(NullPointerException.class, node::getElement);
+        void getElement(){
+            assertEquals(node.getElement(), 11);
         }
 
         @Test
         void getLeftChildEmpty(){
-            assertThrows(NullPointerException.class, node::getLeftChild);
+            assertNull(node.getLeftChild());
         }
 
         @Test
         void getRightChildEmpty(){
-            assertThrows(NullPointerException.class, node::getRightChild);
+            assertNull(node.getRightChild());
+        }
+
+        @Test
+        void addLeftChild(){
+            node.addLeftChild(new BinaryTreeNode(41));
+        }
+
+        @Test
+        void addRightChild(){
+            node.addLeftChild(new BinaryTreeNode(20));
         }
 
         @Test
@@ -53,74 +60,25 @@ class BinaryTreeNodeADTTest {
             node.setElement(2147483647);
         }
 
-        @Test
-        void setLeftChildWhenLargerThanParent(){
-            node.setElement(8);
-            try{
-                node.addLeftChild(12);
-                fail();
-            }catch (IllegalArgumentException e){
-            }
-        }
 
-        @Test
-        void setLeftChildWhenSmallerOrEqualToParent(){
-            node.setElement(8);
-            node.addLeftChild(5);
-            node.addLeftChild(8);
-        }
+    }
 
-        @Test
-        void setLeftChildWhenNoParent(){
-            try{
-                node.addLeftChild(12);
-                fail();
-            }catch (IllegalArgumentException e){
-            }
-        }
-
-        @Test
-        void setRightChildWhenLargerThanParent(){
-            node.setElement(8);
-            node.addRightChild(12);
-        }
-
-        @Test
-        void setRightChildWhenSmallerThanParent(){
-            node.setElement(8);
-            try{
-                node.addRightChild(7);
-                fail();
-            }catch (IllegalArgumentException e){
-            }
-        }
-
-        @Test
-        void setRightChildWhenNoParent(){
-            try{
-                node.addRightChild(7);
-                fail();
-            }catch (IllegalArgumentException e){
-            }
-        }
-
-        @Test
-        void getElement(){
-            node.setElement(27);
-            assertEquals(node.getElement(), 27);
+    @Nested
+    class whenElementsAdded{
+        @BeforeEach
+        void instantiateTree(){
+            node = new BinaryTreeNode(11);
+            node.addLeftChild(new BinaryTreeNode(10));
+            node.addRightChild(new BinaryTreeNode(28));
         }
 
         @Test
         void getLeftChild(){
-            node.setElement(27);
-            node.addLeftChild(10);
             assertTrue(node.getLeftChild().getElement() == 10);
         }
 
         @Test
         void getRightChild(){
-            node.setElement(27);
-            node.addRightChild(28);
             assertEquals(node.getRightChild().getElement(), 28);
         }
     }

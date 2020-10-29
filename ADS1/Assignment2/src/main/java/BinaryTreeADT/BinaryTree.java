@@ -1,31 +1,23 @@
 package BinaryTreeADT;
 
-import BinaryTreeNodeADT.BinaryTreeNodeADT;
-import BinaryTreeNodeADT.IBinaryTreeNodeADT;
+import BinaryTreeNodeADT.IBinaryTreeNode;
 import java.util.ArrayList;
 
-public class BinaryTreeADT implements IBinaryTreeADT{
-    protected IBinaryTreeNodeADT element;
+public class BinaryTree implements IBinaryTree {
+    protected IBinaryTreeNode element;
 
-    public BinaryTreeADT(int value) {
-        element = new BinaryTreeNodeADT(value);
-    }
-
-    public BinaryTreeADT() {
+    public BinaryTree(IBinaryTreeNode value) {
+        element = value;
     }
 
     @Override
-    public IBinaryTreeNodeADT getRoot() {
+    public IBinaryTreeNode getRoot() {
         return element;
     }
 
     @Override
     public Boolean isEmpty() {
-        if(element.getLeftChild() != null && element.getRightChild() != null){
-            return false;
-        } else {
-            return true;
-        }
+        return element.getLeftChild() == null && element.getRightChild() == null;
     }
 
     @Override
@@ -34,7 +26,7 @@ public class BinaryTreeADT implements IBinaryTreeADT{
         return size;
     }
 
-    private int findSizeOfTree(IBinaryTreeNodeADT element) {
+    private int findSizeOfTree(IBinaryTreeNode element) {
         if(element.getLeftChild() != null && element.getRightChild() != null){
             return 1 + findSizeOfTree(element.getLeftChild()) + findSizeOfTree(element.getRightChild());
         } else if(element.getLeftChild() != null && element.getRightChild() == null){
@@ -50,15 +42,19 @@ public class BinaryTreeADT implements IBinaryTreeADT{
         return doesTreeContainValue(element,value);
     }
 
-    private Boolean doesTreeContainValue(IBinaryTreeNodeADT element, int value) {
+    private Boolean doesTreeContainValue(IBinaryTreeNode element, int value) {
         if(element.getElement() == value){
             return true;
-        } else if(element.getElement() >= value && element.getLeftChild() != null){
-            return doesTreeContainValue(element.getLeftChild(), value);
-        } else if(element.getElement() < value && element.getRightChild() != null){
-            return doesTreeContainValue(element.getRightChild(), value);
-        }else {
-            return false;
+        } else{
+            boolean left = false;
+            boolean right = false;
+            if(element.getLeftChild() != null){
+                left = doesTreeContainValue(element.getLeftChild(), value);
+            }
+            if(element.getRightChild() != null) {
+                right = doesTreeContainValue(element.getRightChild(), value);
+            }
+            return left || right;
         }
     }
 
@@ -69,7 +65,7 @@ public class BinaryTreeADT implements IBinaryTreeADT{
         return order;
     }
 
-    private void traverseInOrder(IBinaryTreeNodeADT element, ArrayList<Integer> order) {
+    private void traverseInOrder(IBinaryTreeNode element, ArrayList<Integer> order) {
         if(element.getLeftChild() != null && element.getRightChild() != null){
             traverseInOrder(element.getLeftChild(), order);
             order.add(element.getElement());
@@ -92,7 +88,7 @@ public class BinaryTreeADT implements IBinaryTreeADT{
         return order;
     }
 
-    private void traversePreOrder(IBinaryTreeNodeADT element, ArrayList<Integer> order) {
+    private void traversePreOrder(IBinaryTreeNode element, ArrayList<Integer> order) {
         order.add(element.getElement());
         if(element.getLeftChild() != null){
             traversePreOrder(element.getLeftChild(), order);
@@ -109,7 +105,7 @@ public class BinaryTreeADT implements IBinaryTreeADT{
         return order;
     }
 
-    private void traversePostOrder(IBinaryTreeNodeADT element, ArrayList<Integer> order) {
+    private void traversePostOrder(IBinaryTreeNode element, ArrayList<Integer> order) {
         if(element.getLeftChild() != null){
             traversePostOrder(element.getLeftChild(), order);
         }
@@ -133,7 +129,7 @@ public class BinaryTreeADT implements IBinaryTreeADT{
         return order;
     }
 
-    private boolean traverseLevelOrder(IBinaryTreeNodeADT element, ArrayList<Integer> order, int drill) {
+    private boolean traverseLevelOrder(IBinaryTreeNode element, ArrayList<Integer> order, int drill) {
         if(drill == 0 && element.getLeftChild() != null || drill == 0 && element.getRightChild() != null){
             order.add(element.getElement());
             return true;
@@ -158,7 +154,7 @@ public class BinaryTreeADT implements IBinaryTreeADT{
         return getHeight(element, 0);
     }
 
-    private int getHeight(IBinaryTreeNodeADT element, int height) {
+    private int getHeight(IBinaryTreeNode element, int height) {
         if(element.getLeftChild() != null && element.getRightChild() != null){
             int left = getHeight(element.getLeftChild(), height+1);
             int right = getHeight(element.getRightChild(), height+1);
