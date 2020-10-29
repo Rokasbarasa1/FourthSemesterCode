@@ -1,11 +1,10 @@
 package BinaryTreeNodeADT;
 
 public interface IBinaryTreeNodeADT {
-    void setElement(int element);
+    void setElement(int value);
     int getElement();
-    void addLeftChild(int element);
-    void addRightChild(int element);
+    void addLeftChild(int value);
+    void addRightChild(int value);
     IBinaryTreeNodeADT getLeftChild();
     IBinaryTreeNodeADT getRightChild();
-    boolean isElementInitialized();
 }

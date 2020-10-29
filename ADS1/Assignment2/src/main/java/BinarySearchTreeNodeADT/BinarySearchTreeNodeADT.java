@@ -4,7 +4,11 @@ import BinaryTreeNodeADT.BinaryTreeNodeADT;
 import BinaryTreeNodeADT.IBinaryTreeNodeADT;
 
 public class BinarySearchTreeNodeADT extends BinaryTreeNodeADT implements IBinarySearchTreeNodeADT{
-    private IBinaryTreeNodeADT parent;
+    private IBinarySearchTreeNodeADT parent;
+
+    public BinarySearchTreeNodeADT (int value){
+        super(value);
+    }
 
     @Override
     public void setParent(IBinarySearchTreeNodeADT parent) {
@@ -13,6 +17,6 @@ public class BinarySearchTreeNodeADT extends BinaryTreeNodeADT implements IBinar
 
     @Override
     public IBinarySearchTreeNodeADT getParent() {
-        return null;
+        return parent;
     }
 }

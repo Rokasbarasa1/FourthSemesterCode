@@ -6,6 +6,7 @@
 
 int main() {
     printf("Hello, World!\n");
+    /*
     list_t list;
     list = list_createList();
     int num1 = 8;
@@ -86,7 +87,7 @@ int main() {
 
 
 
-
+*/
     // STUDENT EXERCISE Propper
     student_t student1;
     student1 = student_createStudent("Rokas", "Barasa", 0, "Lithuanian");

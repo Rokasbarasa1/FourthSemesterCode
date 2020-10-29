@@ -11,14 +11,14 @@ class BinaryTreeADTTest {
 
     @Test
     void treeInstantiation(){
-        tree = new BinaryTreeADT();
+        tree = new BinaryTreeADT(1);
     }
 
     @Nested
     class whenNew{
         @BeforeEach
         void instantiateTree(){
-            tree = new BinaryTreeADT();
+            tree = new BinaryTreeADT(1);
         }
 
         @Test

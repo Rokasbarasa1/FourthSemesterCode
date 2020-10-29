@@ -1,23 +1,39 @@
 package BinarySearchTreeADT;
 
+import BinarySearchTreeNodeADT.BinarySearchTreeNodeADT;
+import BinarySearchTreeNodeADT.IBinarySearchTreeNodeADT;
 import BinaryTreeADT.BinaryTreeADT;
 import BinaryTreeNodeADT.BinaryTreeNodeADT;
 import BinaryTreeNodeADT.IBinaryTreeNodeADT;
 
 
 public class BinarySearchTreeADT extends BinaryTreeADT implements IBinarySearchTreeADT  {
+
+    public BinarySearchTreeADT(int value) {
+        element = new BinarySearchTreeNodeADT(value);
+    }
+
     @Override
-    public void addElement(int element) {
+    public void addElement(int value) {
+        IBinarySearchTreeNodeADT parent = addElementToTree((IBinarySearchTreeNodeADT)getRoot(), value);
+        if(parent.getElement() <= value){
+            parent.addRightChild(value); // Might need to remake the add child to node instead of the int.
+        }
+    }
+
+    private IBinarySearchTreeNodeADT addElementToTree(IBinarySearchTreeNodeADT element,int value) {
+        //Find the node now
+        if(element)
+    }
+
+
+    @Override
+    public void removeElement(int value) {
 
     }
 
     @Override
-    public void removeElement(int element) {
-
-    }
-
-    @Override
-    public void removeAllOccurrences(int element) {
+    public void removeAllOccurrences(int value) {
 
     }
 
@@ -38,7 +54,7 @@ public class BinarySearchTreeADT extends BinaryTreeADT implements IBinarySearchT
 
     @Override
     public int findMax() {
-        return findMaximumValue();
+        return findMaximumValue(getRoot());
     }
 
     private int findMinimumValue(IBinaryTreeNodeADT element){

@@ -9,9 +9,9 @@ public interface IBinaryTreeADT {
     Boolean isEmpty();
     int size();
     boolean contains(int value);
-    ArrayList<IBinaryTreeNodeADT> inOrder();
-    ArrayList<IBinaryTreeNodeADT> preOrder();
-    ArrayList<IBinaryTreeNodeADT> postOrder();
-    ArrayList<IBinaryTreeNodeADT> levelOrder();
+    ArrayList<Integer> inOrder();
+    ArrayList<Integer> preOrder();
+    ArrayList<Integer> postOrder();
+    ArrayList<Integer> levelOrder();
     int height();
 }

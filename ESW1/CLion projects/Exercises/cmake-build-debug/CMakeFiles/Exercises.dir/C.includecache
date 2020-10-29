@@ -6,13 +6,35 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/List.c
-List.h
-C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/List.h
-stdlib.h
--
-
 C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/List.h
 stdint.h
 -
+
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/Student.h
+stdint.h
+-
+
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/StudentHandler.h
+Student.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/Student.h
+
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/StudentList.h
+stdint.h
+-
+Student.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/Student.h
+List.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/List.h
+
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/main.c
+stdio.h
+-
+List.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/List.h
+Student.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/Student.h
+StudentList.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/StudentList.h
+StudentHandler.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Exercises/StudentHandler.h
 
