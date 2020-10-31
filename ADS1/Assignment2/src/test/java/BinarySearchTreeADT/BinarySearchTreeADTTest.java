@@ -19,9 +19,7 @@ class BinarySearchTreeADTTest {
     ArrayList<Integer> correctPostOrder;
     ArrayList<Integer> correctLevelOrder;
     IBinarySearchTreeNode root;
-
     BinaryTreePrint binaryTreePrint;
-
 
     @Test
     void treeInstantiation(){
