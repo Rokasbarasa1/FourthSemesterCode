@@ -7,23 +7,28 @@
     android:layout_height="match_parent"
     >
 
+    <include
+        layout ="@layout/toolbar"
+        app:menu="@menu/toolbar_menu" />
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottomView"/>
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/bottomView" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="start"
         android:layout_alignParentBottom="true"
+        android:layout_gravity="start"
+        android:background="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/colorPrimary"
-        app:menu="@menu/menu" />
+        app:menu="@menu/bottom_navigation_menu" />
 
 
 </RelativeLayout>

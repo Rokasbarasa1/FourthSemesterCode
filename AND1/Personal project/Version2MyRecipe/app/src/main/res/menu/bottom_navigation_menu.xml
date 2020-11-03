@@ -3,14 +3,21 @@
     <item
         android:id="@+id/recipes"
         android:title="Recipe"
-        android:icon="@drawable/recipes"/>
+        android:icon="@drawable/recipes"
+        />
     <item
         android:id="@+id/calendar"
         android:title="Calendar"
-        android:icon="@drawable/calendar"/>
+        android:icon="@drawable/calendar"
+        />
     <item
         android:id="@+id/grocery"
         android:title="Grocery"
         android:icon="@drawable/grocery"
+        />
+    <item
+        android:id="@+id/random"
+        android:title="Random"
+        android:icon="@drawable/random"
         />
 </menu>

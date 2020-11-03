@@ -8,28 +8,27 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.version2myrecipe.R;
-import com.example.version2myrecipe.models.Tag;
+import com.example.version2myrecipe.models.Recipe;
 
 import java.util.List;
 
-public class TagAdapter extends RecyclerView.Adapter<TagAdapter.ViewHolder> {
-    List<Tag> tags;
-    OnListItemClickListener listener;
-    public TagAdapter(List<Tag> tags, OnListItemClickListener listener){
-        this.tags = tags;
-        this.listener = listener;
+public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder> {
+    List<Recipe> recipes;
+
+    public RecipeAdapter(List<Recipe> tags){
+        this.recipes = tags;
     }
 
 
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+    public RecipeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.piece_tag, parent, false);
-        return new ViewHolder(view);
+        return new RecipeAdapter.ViewHolder(view);
 
     }
 
-    public void onBindViewHolder(ViewHolder viewHolder, int position){
-        viewHolder.name.setText(tags.get(position).getName());
+    public void onBindViewHolder(RecipeAdapter.ViewHolder viewHolder, int position){
+        viewHolder.name.setText(recipes.get(position).get);
     }
 
     public int getItemCount(){

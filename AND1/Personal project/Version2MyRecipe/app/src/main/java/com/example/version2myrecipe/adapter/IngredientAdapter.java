@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.version2myrecipe.R;
 import com.example.version2myrecipe.models.Ingredient;
-import com.example.version2myrecipe.models.TextChangedListener;
 
 import java.util.List;
 

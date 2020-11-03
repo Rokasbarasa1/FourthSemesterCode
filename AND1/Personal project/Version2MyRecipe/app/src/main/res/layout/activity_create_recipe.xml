@@ -14,13 +14,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="New Recipe"
-                android:textAlignment="center"
-                android:textSize="36sp"
-                android:background="@color/colorPrimary"/>
+            <include
+                layout ="@layout/toolbar"
+                app:menu="@menu/toolbar_menu" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -41,27 +37,27 @@
 
                 <EditText
                     android:id="@+id/newRecipePrepTime"
-                    android:textCursorDrawable = "@null"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:background="@color/colorAccent"
                     android:ems="10"
-                    android:hint="Prep time"
-                    android:inputType="textPersonName"
-                    android:padding="10dp" />
+                    android:hint="Prep time in minutes"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textCursorDrawable="@null" />
 
                 <EditText
                     android:id="@+id/newRecipeCookTime"
-                    android:textCursorDrawable = "@null"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:background="@color/colorAccent"
                     android:ems="10"
-                    android:hint="Cook time"
-                    android:inputType="textPersonName"
-                    android:padding="10dp" />
+                    android:hint="Cook time in minutes"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textCursorDrawable="@null" />
 
                 <EditText
                     android:id="@+id/newRecipeServingSize"
@@ -162,7 +158,7 @@
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/colorAccent"
-                android:hint="Tags that help find the recipe"
+                android:hint="Tags that help find the recipe. Tea,Cabbage,Onion..."
                 android:padding="10dp"
                 android:textCursorDrawable="@null" />
 

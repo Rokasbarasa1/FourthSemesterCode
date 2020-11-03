@@ -38,7 +38,6 @@ public class ActivityLogin extends AppCompatActivity {
         if(email.getText().toString().equals("user@email.com") && password.getText().toString().equals("ILOVEAND")){
             Log.d("Login", "Login success");
             Toast.makeText(getApplicationContext(), "Login success", Toast.LENGTH_SHORT);
-            login.setText(R.string.email_message);
             this.finish();
         }
     }

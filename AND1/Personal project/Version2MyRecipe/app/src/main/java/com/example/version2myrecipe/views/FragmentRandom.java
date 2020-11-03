@@ -10,16 +10,13 @@ import android.view.ViewGroup;
 
 import com.example.version2myrecipe.R;
 
-public class fragmentTagExpanded extends Fragment {
+public class FragmentRandom extends Fragment {
 
-
-    public fragmentTagExpanded() {
+    public FragmentRandom() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_tag_expanded, container, false);
-
-        return rootView;
+        return inflater.inflate(R.layout.fragment_random, container, false);
     }
 }

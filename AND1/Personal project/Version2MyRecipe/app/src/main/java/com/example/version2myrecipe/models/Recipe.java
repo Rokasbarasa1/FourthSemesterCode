@@ -6,12 +6,12 @@ public class Recipe {
     private String name;
     private int prepTime;
     private int cookTime;
-    private double servingSize;
+    private int servingSize;
     private ArrayList<Ingredient> ingredients;
     private String description;
     private ArrayList<Tag> tags;
 
-    public Recipe(String name, int prepTime, int cookTime, double servingSize, ArrayList<Ingredient> ingredients, String description, ArrayList<Tag> tags) {
+    public Recipe(String name, int prepTime, int cookTime, int servingSize, ArrayList<Ingredient> ingredients, String description, ArrayList<Tag> tags) {
         this.name = name;
         this.prepTime = prepTime;
         this.cookTime = cookTime;

@@ -1,6 +1,5 @@
 package com.example.version2myrecipe.adapter;
 
-import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.version2myrecipe.R;
 import com.example.version2myrecipe.models.Ingredient;
-import com.example.version2myrecipe.models.TextChangedListener;
 
 import java.util.List;
 
@@ -46,10 +44,11 @@ public class EmptyIngredientAdapter extends RecyclerView.Adapter<EmptyIngredient
         EditText name;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            name.addTextChangedListener(new TextChangedListener<EditText>(name) {
+            name = itemView.findViewById(R.id.ingredient_text);
+            name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
-                public void onTextChanged(EditText target, Editable s) {
-                    listener.onEdit(getAdapterPosition());
+                public void onFocusChange(View v, boolean hasFocus) {
+                    listener.onEdit(getAdapterPosition(), name.getText().toString());
                 }
             });
             name = itemView.findViewById(R.id.ingredient_text);
@@ -57,6 +56,6 @@ public class EmptyIngredientAdapter extends RecyclerView.Adapter<EmptyIngredient
     }
 
     public interface OnEditTextListener{
-        void onEdit(int position);
+        void onEdit(int position, String text);
     }
 }

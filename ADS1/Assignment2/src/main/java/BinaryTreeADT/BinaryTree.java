@@ -158,13 +158,7 @@ public class BinaryTree implements IBinaryTree {
         if(element.getLeftChild() != null && element.getRightChild() != null){
             int left = getHeight(element.getLeftChild(), height+1);
             int right = getHeight(element.getRightChild(), height+1);
-            if(left > right){
-                return left;
-            } else if(left < right){
-                return right;
-            }else {
-                return left;
-            }
+            return left > right?left: right;
         } else if(element.getLeftChild() != null && element.getRightChild() == null){
             return getHeight(element.getLeftChild(), ++height);
         } else if(element.getLeftChild() == null && element.getRightChild() != null){
