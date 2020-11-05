@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Session6_4.dir/Drivers/HumidityDriver.c.obj"
+  "CMakeFiles/Session6_4.dir/Drivers/TempDriver.c.obj"
   "CMakeFiles/Session6_4.dir/HealthHandler.c.obj"
   "CMakeFiles/Session6_4.dir/Humidity.c.obj"
-  "CMakeFiles/Session6_4.dir/HumidityDriver.c.obj"
-  "CMakeFiles/Session6_4.dir/List.c.obj"
   "CMakeFiles/Session6_4.dir/Room.c.obj"
-  "CMakeFiles/Session6_4.dir/TempDriver.c.obj"
+  "CMakeFiles/Session6_4.dir/Support/List.c.obj"
   "CMakeFiles/Session6_4.dir/Temperature.c.obj"
   "CMakeFiles/Session6_4.dir/main.c.obj"
   "Session6_4.exe"

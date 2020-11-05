@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Humidity.h
+stdint.h
+-
+
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Room.c
+string.h
+-
+corecrt_malloc.h
+-
+Room.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Room.h
+Temperature.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Temperature.h
+Humidity.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Humidity.h
+Support/List.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Support/List.h
+
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Room.h
+Temperature.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Temperature.h
+Humidity.h
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Humidity.h
+stdint.h
+-
+
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Support/List.h
+stdint.h
+-
+
+C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Temperature.h
+stdint.h
+-
+

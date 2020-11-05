@@ -84,6 +84,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Drivers/HumidityDriver.c">
+			<Option target="Session6_4"/>
+		</Unit>
+		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Drivers/HumidityDriver.h">
+			<Option target="Session6_4"/>
+		</Unit>
+		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Drivers/TempDriver.c">
+			<Option target="Session6_4"/>
+		</Unit>
+		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Drivers/TempDriver.h">
+			<Option target="Session6_4"/>
+		</Unit>
 		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/HealthHandler.c">
 			<Option target="Session6_4"/>
 		</Unit>
@@ -96,28 +108,16 @@
 		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Humidity.h">
 			<Option target="Session6_4"/>
 		</Unit>
-		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/HumidityDriver.c">
-			<Option target="Session6_4"/>
-		</Unit>
-		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/HumidityDriver.h">
-			<Option target="Session6_4"/>
-		</Unit>
-		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/List.c">
-			<Option target="Session6_4"/>
-		</Unit>
-		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/List.h">
-			<Option target="Session6_4"/>
-		</Unit>
 		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Room.c">
 			<Option target="Session6_4"/>
 		</Unit>
 		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Room.h">
 			<Option target="Session6_4"/>
 		</Unit>
-		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/TempDriver.c">
+		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Support/List.c">
 			<Option target="Session6_4"/>
 		</Unit>
-		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/TempDriver.h">
+		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Support/List.h">
 			<Option target="Session6_4"/>
 		</Unit>
 		<Unit filename="C:/Users/Rokas/Desktop/SEMESTERS/4Fourth/ESW1/CLion projects/Session6-4/Temperature.c">

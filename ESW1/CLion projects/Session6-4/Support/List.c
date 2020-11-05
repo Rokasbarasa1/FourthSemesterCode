@@ -99,7 +99,7 @@ list_listReturnCode list_destroy(list_t self) {
     }
 }
 
-list_listReturnCode list_addItem(list_t self, void* item) {
+list_listReturnCode list_addItem(list_t self, void** item) {
     if(NULL != self){
         Node* new_node = calloc(sizeof(Node), 1);
         if (NULL == new_node) {
@@ -132,7 +132,7 @@ list_listReturnCode list_getItem(list_t self, void** item, uint16_t index) {
     }
 }
 
-list_listReturnCode list_removeItem(list_t self, void* item) {
+list_listReturnCode list_removeItem(list_t self, void** item) {
     if(NULL != self){
         Node* node_to_delete = list_findNodeByItem(self->head, item);
         if(!node_to_delete){

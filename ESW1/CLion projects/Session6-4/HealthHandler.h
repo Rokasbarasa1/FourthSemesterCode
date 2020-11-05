@@ -6,7 +6,7 @@
 #define SESSION6_4_HEALTHHANDLER_H
 #include "Room.h"
 
-typedef struct HealthHandler healthHandler_t;
+typedef struct HealthHandler* healthHandler_t;
 healthHandler_t healthHandler_create();
 void healthHandler_destroy(healthHandler_t self);
 void healthHandler_addRoom(healthHandler_t self, room_t room);

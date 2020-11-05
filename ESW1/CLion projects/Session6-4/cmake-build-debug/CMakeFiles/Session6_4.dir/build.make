@@ -156,61 +156,61 @@ CMakeFiles\Session6_4.dir\Temperature.c.s: cmake_force
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\Session6_4.dir\Temperature.c.s /c "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\Temperature.c"
 <<
 
-CMakeFiles\Session6_4.dir\List.c.obj: CMakeFiles\Session6_4.dir\flags.make
-CMakeFiles\Session6_4.dir\List.c.obj: ..\List.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Session6_4.dir/List.c.obj"
+CMakeFiles\Session6_4.dir\Support\List.c.obj: CMakeFiles\Session6_4.dir\flags.make
+CMakeFiles\Session6_4.dir\Support\List.c.obj: ..\Support\List.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Session6_4.dir/Support/List.c.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\Session6_4.dir\List.c.obj /FdCMakeFiles\Session6_4.dir\ /FS -c "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\List.c"
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\Session6_4.dir\Support\List.c.obj /FdCMakeFiles\Session6_4.dir\ /FS -c "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\Support\List.c"
 <<
 
-CMakeFiles\Session6_4.dir\List.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Session6_4.dir/List.c.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe > CMakeFiles\Session6_4.dir\List.c.i @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\List.c"
+CMakeFiles\Session6_4.dir\Support\List.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Session6_4.dir/Support/List.c.i"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe > CMakeFiles\Session6_4.dir\Support\List.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\Support\List.c"
 <<
 
-CMakeFiles\Session6_4.dir\List.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Session6_4.dir/List.c.s"
+CMakeFiles\Session6_4.dir\Support\List.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Session6_4.dir/Support/List.c.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\Session6_4.dir\List.c.s /c "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\List.c"
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\Session6_4.dir\Support\List.c.s /c "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\Support\List.c"
 <<
 
-CMakeFiles\Session6_4.dir\TempDriver.c.obj: CMakeFiles\Session6_4.dir\flags.make
-CMakeFiles\Session6_4.dir\TempDriver.c.obj: ..\TempDriver.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Session6_4.dir/TempDriver.c.obj"
+CMakeFiles\Session6_4.dir\Drivers\TempDriver.c.obj: CMakeFiles\Session6_4.dir\flags.make
+CMakeFiles\Session6_4.dir\Drivers\TempDriver.c.obj: ..\Drivers\TempDriver.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Session6_4.dir/Drivers/TempDriver.c.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\Session6_4.dir\TempDriver.c.obj /FdCMakeFiles\Session6_4.dir\ /FS -c "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\TempDriver.c"
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\Session6_4.dir\Drivers\TempDriver.c.obj /FdCMakeFiles\Session6_4.dir\ /FS -c "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\Drivers\TempDriver.c"
 <<
 
-CMakeFiles\Session6_4.dir\TempDriver.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Session6_4.dir/TempDriver.c.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe > CMakeFiles\Session6_4.dir\TempDriver.c.i @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\TempDriver.c"
+CMakeFiles\Session6_4.dir\Drivers\TempDriver.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Session6_4.dir/Drivers/TempDriver.c.i"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe > CMakeFiles\Session6_4.dir\Drivers\TempDriver.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\Drivers\TempDriver.c"
 <<
 
-CMakeFiles\Session6_4.dir\TempDriver.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Session6_4.dir/TempDriver.c.s"
+CMakeFiles\Session6_4.dir\Drivers\TempDriver.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Session6_4.dir/Drivers/TempDriver.c.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\Session6_4.dir\TempDriver.c.s /c "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\TempDriver.c"
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\Session6_4.dir\Drivers\TempDriver.c.s /c "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\Drivers\TempDriver.c"
 <<
 
-CMakeFiles\Session6_4.dir\HumidityDriver.c.obj: CMakeFiles\Session6_4.dir\flags.make
-CMakeFiles\Session6_4.dir\HumidityDriver.c.obj: ..\HumidityDriver.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Session6_4.dir/HumidityDriver.c.obj"
+CMakeFiles\Session6_4.dir\Drivers\HumidityDriver.c.obj: CMakeFiles\Session6_4.dir\flags.make
+CMakeFiles\Session6_4.dir\Drivers\HumidityDriver.c.obj: ..\Drivers\HumidityDriver.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Session6_4.dir/Drivers/HumidityDriver.c.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\Session6_4.dir\HumidityDriver.c.obj /FdCMakeFiles\Session6_4.dir\ /FS -c "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\HumidityDriver.c"
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\Session6_4.dir\Drivers\HumidityDriver.c.obj /FdCMakeFiles\Session6_4.dir\ /FS -c "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\Drivers\HumidityDriver.c"
 <<
 
-CMakeFiles\Session6_4.dir\HumidityDriver.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Session6_4.dir/HumidityDriver.c.i"
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe > CMakeFiles\Session6_4.dir\HumidityDriver.c.i @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\HumidityDriver.c"
+CMakeFiles\Session6_4.dir\Drivers\HumidityDriver.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Session6_4.dir/Drivers/HumidityDriver.c.i"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe > CMakeFiles\Session6_4.dir\Drivers\HumidityDriver.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\Drivers\HumidityDriver.c"
 <<
 
-CMakeFiles\Session6_4.dir\HumidityDriver.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Session6_4.dir/HumidityDriver.c.s"
+CMakeFiles\Session6_4.dir\Drivers\HumidityDriver.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Session6_4.dir/Drivers/HumidityDriver.c.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
- /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\Session6_4.dir\HumidityDriver.c.s /c "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\HumidityDriver.c"
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\Session6_4.dir\Drivers\HumidityDriver.c.s /c "C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\Drivers\HumidityDriver.c"
 <<
 
 # Object files for target Session6_4
@@ -220,9 +220,9 @@ Session6_4_OBJECTS = \
 "CMakeFiles\Session6_4.dir\Room.c.obj" \
 "CMakeFiles\Session6_4.dir\Humidity.c.obj" \
 "CMakeFiles\Session6_4.dir\Temperature.c.obj" \
-"CMakeFiles\Session6_4.dir\List.c.obj" \
-"CMakeFiles\Session6_4.dir\TempDriver.c.obj" \
-"CMakeFiles\Session6_4.dir\HumidityDriver.c.obj"
+"CMakeFiles\Session6_4.dir\Support\List.c.obj" \
+"CMakeFiles\Session6_4.dir\Drivers\TempDriver.c.obj" \
+"CMakeFiles\Session6_4.dir\Drivers\HumidityDriver.c.obj"
 
 # External object files for target Session6_4
 Session6_4_EXTERNAL_OBJECTS =
@@ -232,9 +232,9 @@ Session6_4.exe: CMakeFiles\Session6_4.dir\HealthHandler.c.obj
 Session6_4.exe: CMakeFiles\Session6_4.dir\Room.c.obj
 Session6_4.exe: CMakeFiles\Session6_4.dir\Humidity.c.obj
 Session6_4.exe: CMakeFiles\Session6_4.dir\Temperature.c.obj
-Session6_4.exe: CMakeFiles\Session6_4.dir\List.c.obj
-Session6_4.exe: CMakeFiles\Session6_4.dir\TempDriver.c.obj
-Session6_4.exe: CMakeFiles\Session6_4.dir\HumidityDriver.c.obj
+Session6_4.exe: CMakeFiles\Session6_4.dir\Support\List.c.obj
+Session6_4.exe: CMakeFiles\Session6_4.dir\Drivers\TempDriver.c.obj
+Session6_4.exe: CMakeFiles\Session6_4.dir\Drivers\HumidityDriver.c.obj
 Session6_4.exe: CMakeFiles\Session6_4.dir\build.make
 Session6_4.exe: CMakeFiles\Session6_4.dir\objects1.rsp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Rokas\Desktop\SEMESTERS\4Fourth\ESW1\CLion projects\Session6-4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable Session6_4.exe"

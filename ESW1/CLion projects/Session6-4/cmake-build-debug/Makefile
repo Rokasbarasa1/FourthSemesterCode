@@ -127,6 +127,60 @@ Session6_4\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\build
 .PHONY : Session6_4\fast
 
+Drivers\HumidityDriver.obj: Drivers\HumidityDriver.c.obj
+
+.PHONY : Drivers\HumidityDriver.obj
+
+# target to build an object file
+Drivers\HumidityDriver.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\Drivers\HumidityDriver.c.obj
+.PHONY : Drivers\HumidityDriver.c.obj
+
+Drivers\HumidityDriver.i: Drivers\HumidityDriver.c.i
+
+.PHONY : Drivers\HumidityDriver.i
+
+# target to preprocess a source file
+Drivers\HumidityDriver.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\Drivers\HumidityDriver.c.i
+.PHONY : Drivers\HumidityDriver.c.i
+
+Drivers\HumidityDriver.s: Drivers\HumidityDriver.c.s
+
+.PHONY : Drivers\HumidityDriver.s
+
+# target to generate assembly for a file
+Drivers\HumidityDriver.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\Drivers\HumidityDriver.c.s
+.PHONY : Drivers\HumidityDriver.c.s
+
+Drivers\TempDriver.obj: Drivers\TempDriver.c.obj
+
+.PHONY : Drivers\TempDriver.obj
+
+# target to build an object file
+Drivers\TempDriver.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\Drivers\TempDriver.c.obj
+.PHONY : Drivers\TempDriver.c.obj
+
+Drivers\TempDriver.i: Drivers\TempDriver.c.i
+
+.PHONY : Drivers\TempDriver.i
+
+# target to preprocess a source file
+Drivers\TempDriver.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\Drivers\TempDriver.c.i
+.PHONY : Drivers\TempDriver.c.i
+
+Drivers\TempDriver.s: Drivers\TempDriver.c.s
+
+.PHONY : Drivers\TempDriver.s
+
+# target to generate assembly for a file
+Drivers\TempDriver.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\Drivers\TempDriver.c.s
+.PHONY : Drivers\TempDriver.c.s
+
 HealthHandler.obj: HealthHandler.c.obj
 
 .PHONY : HealthHandler.obj
@@ -181,60 +235,6 @@ Humidity.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\Humidity.c.s
 .PHONY : Humidity.c.s
 
-HumidityDriver.obj: HumidityDriver.c.obj
-
-.PHONY : HumidityDriver.obj
-
-# target to build an object file
-HumidityDriver.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\HumidityDriver.c.obj
-.PHONY : HumidityDriver.c.obj
-
-HumidityDriver.i: HumidityDriver.c.i
-
-.PHONY : HumidityDriver.i
-
-# target to preprocess a source file
-HumidityDriver.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\HumidityDriver.c.i
-.PHONY : HumidityDriver.c.i
-
-HumidityDriver.s: HumidityDriver.c.s
-
-.PHONY : HumidityDriver.s
-
-# target to generate assembly for a file
-HumidityDriver.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\HumidityDriver.c.s
-.PHONY : HumidityDriver.c.s
-
-List.obj: List.c.obj
-
-.PHONY : List.obj
-
-# target to build an object file
-List.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\List.c.obj
-.PHONY : List.c.obj
-
-List.i: List.c.i
-
-.PHONY : List.i
-
-# target to preprocess a source file
-List.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\List.c.i
-.PHONY : List.c.i
-
-List.s: List.c.s
-
-.PHONY : List.s
-
-# target to generate assembly for a file
-List.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\List.c.s
-.PHONY : List.c.s
-
 Room.obj: Room.c.obj
 
 .PHONY : Room.obj
@@ -262,32 +262,32 @@ Room.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\Room.c.s
 .PHONY : Room.c.s
 
-TempDriver.obj: TempDriver.c.obj
+Support\List.obj: Support\List.c.obj
 
-.PHONY : TempDriver.obj
+.PHONY : Support\List.obj
 
 # target to build an object file
-TempDriver.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\TempDriver.c.obj
-.PHONY : TempDriver.c.obj
+Support\List.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\Support\List.c.obj
+.PHONY : Support\List.c.obj
 
-TempDriver.i: TempDriver.c.i
+Support\List.i: Support\List.c.i
 
-.PHONY : TempDriver.i
+.PHONY : Support\List.i
 
 # target to preprocess a source file
-TempDriver.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\TempDriver.c.i
-.PHONY : TempDriver.c.i
+Support\List.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\Support\List.c.i
+.PHONY : Support\List.c.i
 
-TempDriver.s: TempDriver.c.s
+Support\List.s: Support\List.c.s
 
-.PHONY : TempDriver.s
+.PHONY : Support\List.s
 
 # target to generate assembly for a file
-TempDriver.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\TempDriver.c.s
-.PHONY : TempDriver.c.s
+Support\List.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Session6_4.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Session6_4.dir\Support\List.c.s
+.PHONY : Support\List.c.s
 
 Temperature.obj: Temperature.c.obj
 
@@ -352,24 +352,24 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Session6_4
+	@echo ... Drivers/HumidityDriver.obj
+	@echo ... Drivers/HumidityDriver.i
+	@echo ... Drivers/HumidityDriver.s
+	@echo ... Drivers/TempDriver.obj
+	@echo ... Drivers/TempDriver.i
+	@echo ... Drivers/TempDriver.s
 	@echo ... HealthHandler.obj
 	@echo ... HealthHandler.i
 	@echo ... HealthHandler.s
 	@echo ... Humidity.obj
 	@echo ... Humidity.i
 	@echo ... Humidity.s
-	@echo ... HumidityDriver.obj
-	@echo ... HumidityDriver.i
-	@echo ... HumidityDriver.s
-	@echo ... List.obj
-	@echo ... List.i
-	@echo ... List.s
 	@echo ... Room.obj
 	@echo ... Room.i
 	@echo ... Room.s
-	@echo ... TempDriver.obj
-	@echo ... TempDriver.i
-	@echo ... TempDriver.s
+	@echo ... Support/List.obj
+	@echo ... Support/List.i
+	@echo ... Support/List.s
 	@echo ... Temperature.obj
 	@echo ... Temperature.i
 	@echo ... Temperature.s
