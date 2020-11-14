@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.session4">
 
     <application
@@ -12,7 +13,8 @@
         <activity
             android:name="MainActivity"
             android:label="@string/title_activity_main3"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".ui.appBar.Activity3"
             android:parentActivityName=".ui.appBar.MainActivity" />

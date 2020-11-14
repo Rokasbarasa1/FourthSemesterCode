@@ -8,11 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,7 +24,6 @@ import com.example.version2myrecipe.adapter.TagAdapter;
 import com.example.version2myrecipe.viewModels.TagsViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentTags extends Fragment implements TagAdapter.OnListItemClickListener {
@@ -38,8 +38,12 @@ public class FragmentTags extends Fragment implements TagAdapter.OnListItemClick
     RecyclerView tagList;
     TagAdapter tagAdapter;
     TagsViewModel tagsViewModel;
+    FragmentManager supportFragmentManager;
+    TextView toolbarTitle;
 
-    public FragmentTags() {
+    public FragmentTags(FragmentManager supportFragmentManager, TextView toolbarTitle) {
+        this.supportFragmentManager = supportFragmentManager;
+        this.toolbarTitle = toolbarTitle;
     }
 
     @Override
@@ -136,6 +140,10 @@ public class FragmentTags extends Fragment implements TagAdapter.OnListItemClick
 
     @Override
     public void onClick(int position) {
-        Toast.makeText(getContext(), ""+ position,Toast.LENGTH_SHORT).show();
+        Fragment fragment = null;
+        fragment = new FragmentTagExpanded(tagsViewModel.getTag(position));
+        toolbarTitle.setText(tagsViewModel.getTag(position).getName());
+        //Toast.makeText(getApplicationContext(), ""+ position,Toast.LENGTH_SHORT).show();
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
     }
 }

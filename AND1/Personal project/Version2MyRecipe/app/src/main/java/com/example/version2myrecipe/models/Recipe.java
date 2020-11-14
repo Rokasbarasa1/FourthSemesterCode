@@ -28,4 +28,8 @@ public class Recipe {
     public ArrayList<Tag> getTags() {
         return tags;
     }
+
+    public String getName() {
+        return name;
+    }
 }

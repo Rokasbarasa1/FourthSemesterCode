@@ -22,10 +22,16 @@ public class TagsRepository {
     }
 
     public MutableLiveData<List<Tag>> getTags(){
-        setTags();
+        if(tagDataSet.size() == 0){
+            setTags();
+        }
         MutableLiveData<List<Tag>> data = new MutableLiveData<>();
         data.setValue(tagDataSet);
         return data;
+    }
+
+    public Tag getTag(int index){
+        return tagDataSet.get(index);
     }
 
     private void setTags(){
@@ -56,6 +62,9 @@ public class TagsRepository {
     }
 
 
-
-
+    public MutableLiveData<List<Recipe>> getRecipes() {
+        MutableLiveData<List<Recipe>> data = new MutableLiveData<>();
+        data.setValue(recipeDataSet);
+        return data;
+    }
 }

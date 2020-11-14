@@ -15,8 +15,8 @@ import java.util.List;
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder> {
     List<Recipe> recipes;
 
-    public RecipeAdapter(List<Recipe> tags){
-        this.recipes = tags;
+    public RecipeAdapter(List<Recipe> recipes){
+        this.recipes = recipes;
     }
 
 
@@ -28,11 +28,11 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
     }
 
     public void onBindViewHolder(RecipeAdapter.ViewHolder viewHolder, int position){
-        viewHolder.name.setText(recipes.get(position).get);
+        viewHolder.name.setText(recipes.get(position).getName());
     }
 
     public int getItemCount(){
-        return tags.size();
+        return recipes.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -42,7 +42,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    listener.onClick(getAdapterPosition());
+                    //listener.onClick(getAdapterPosition());
                 }
             });
             name = itemView.findViewById(R.id.tag_text);

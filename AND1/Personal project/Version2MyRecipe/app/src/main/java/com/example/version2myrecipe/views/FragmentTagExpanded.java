@@ -20,7 +20,9 @@ import android.widget.Toast;
 import com.example.version2myrecipe.R;
 import com.example.version2myrecipe.adapter.RecipeAdapter;
 import com.example.version2myrecipe.adapter.TagAdapter;
+import com.example.version2myrecipe.models.Recipe;
 import com.example.version2myrecipe.models.Tag;
+import com.example.version2myrecipe.viewModels.TagsExpandedViewModel;
 import com.example.version2myrecipe.viewModels.TagsViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -37,14 +39,16 @@ public class FragmentTagExpanded extends Fragment {
     boolean clicked = false;
     RecyclerView recipeList;
     RecipeAdapter recipeAdapter;
-    TagsViewModel tagsViewModel;
+    TagsExpandedViewModel tagsExpandedViewModel;
+    Tag currentTag;
 
-    public FragmentTagExpanded() {
+    public FragmentTagExpanded(Tag currentTag) {
+        this.currentTag = currentTag;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.fragment_tags, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_tag_expanded, container, false);
 
         //Tag List
         initRecipesRecyclerView(rootView);
@@ -55,21 +59,24 @@ public class FragmentTagExpanded extends Fragment {
     }
 
     private void initRecipesRecyclerView(View rootView){
-        /*
-        tagsViewModel = ViewModelProviders.of(this).get(TagsViewModel.class);
-        tagsViewModel.init();
-        tagsViewModel.getTags().observe(this, new Observer<List<Tag>>() {
+        tagsExpandedViewModel = ViewModelProviders.of(this).get(TagsExpandedViewModel.class);
+        tagsExpandedViewModel.init();
+        tagsExpandedViewModel.getRecipes().observe(this, new Observer<List<Recipe>>() {
             @Override
-            public void onChanged(List<Tag> tags) {
+            public void onChanged(List<Recipe> tags) {
                 recipeAdapter.notifyDataSetChanged();
             }
         });
-         */
-        recipeList = rootView.findViewById(R.id.rv);
+
+        recipeList = rootView.findViewById(R.id.rv_expanded);
         recipeList.hasFixedSize();
         recipeList.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
-        recipeAdapter = new TagAdapter(tagsViewModel.getTags().getValue());
+        recipeAdapter = new RecipeAdapter(tagsExpandedViewModel.getRecipes().getValue());
         recipeList.setAdapter(recipeAdapter);
+    }
+
+    public void setTag(Tag currentTag){
+        this.currentTag = currentTag;
     }
 
     private void setUpExpandableFloatingButton(final View rootView){

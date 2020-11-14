@@ -23,4 +23,8 @@ public class TagsViewModel extends ViewModel {
     public LiveData<List<Tag>> getTags(){
         return tags;
     }
+
+    public Tag getTag(int position) {
+        return repo.getTag(position);
+    }
 }
