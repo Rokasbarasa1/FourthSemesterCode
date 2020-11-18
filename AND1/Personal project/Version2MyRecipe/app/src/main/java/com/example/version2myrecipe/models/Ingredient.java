@@ -1,11 +1,13 @@
 package com.example.version2myrecipe.models;
 
 public class Ingredient {
+    private String rawString;
     private String name;
     private double quantity;
     private String unitOfMeassure;
 
     public Ingredient() {
+        rawString = "";
         name = "";
         quantity = 0;
         unitOfMeassure = "";
@@ -15,6 +17,14 @@ public class Ingredient {
         this.name = name;
         this.quantity = quantity;
         this.unitOfMeassure = unitOfMeassure;
+    }
+
+    public String getRaw() {
+        return rawString;
+    }
+
+    public void setRaw(String raw) {
+        this.rawString = raw;
     }
 
     public String getName() {
@@ -31,9 +41,5 @@ public class Ingredient {
 
     public String getAsString(){
         return name+" "+quantity+ " " +unitOfMeassure;
-    }
-
-    public String getEmpty(){
-        return "";
     }
 }

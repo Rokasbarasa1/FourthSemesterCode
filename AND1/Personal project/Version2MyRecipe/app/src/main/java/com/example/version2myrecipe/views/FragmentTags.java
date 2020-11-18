@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
@@ -40,10 +41,11 @@ public class FragmentTags extends Fragment implements TagAdapter.OnListItemClick
     TagsViewModel tagsViewModel;
     FragmentManager supportFragmentManager;
     TextView toolbarTitle;
-
-    public FragmentTags(FragmentManager supportFragmentManager, TextView toolbarTitle) {
+    ActionBar upArrow;
+    public FragmentTags(FragmentManager supportFragmentManager, TextView toolbarTitle, ActionBar upArrow) {
         this.supportFragmentManager = supportFragmentManager;
         this.toolbarTitle = toolbarTitle;
+        this.upArrow = upArrow;
     }
 
     @Override
@@ -56,6 +58,13 @@ public class FragmentTags extends Fragment implements TagAdapter.OnListItemClick
         //Expandable button
         setUpExpandableFloatingButton(rootView);
         return rootView;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        System.out.println("Started----------------------------------------------------------------------------");
+        tagsViewModel.refreshTags();
     }
 
     private void initTagsRecyclerView(View rootView){
@@ -145,5 +154,6 @@ public class FragmentTags extends Fragment implements TagAdapter.OnListItemClick
         toolbarTitle.setText(tagsViewModel.getTag(position).getName());
         //Toast.makeText(getApplicationContext(), ""+ position,Toast.LENGTH_SHORT).show();
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+        upArrow.setDisplayHomeAsUpEnabled(true);
     }
 }

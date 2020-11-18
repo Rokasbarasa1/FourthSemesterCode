@@ -1,5 +1,6 @@
 package com.example.version2myrecipe.adapter;
 
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.version2myrecipe.R;
 import com.example.version2myrecipe.models.Ingredient;
+import com.example.version2myrecipe.models.TextChangedListener;
 
 import java.util.List;
 
@@ -32,7 +34,7 @@ public class EmptyIngredientAdapter extends RecyclerView.Adapter<EmptyIngredient
 
     @Override
     public void onBindViewHolder(@NonNull EmptyIngredientAdapter.ViewHolder viewHolder, int position) {
-        viewHolder.name.setText(ingredients.get(position).getEmpty());
+        viewHolder.name.setText(ingredients.get(position).getRaw());
     }
 
     @Override
@@ -45,12 +47,21 @@ public class EmptyIngredientAdapter extends RecyclerView.Adapter<EmptyIngredient
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.ingredient_text);
+            name.addTextChangedListener(new TextChangedListener<EditText>(name) {
+                @Override
+                public void onTextChanged(EditText target, Editable s) {
+                    listener.onEdit(getAdapterPosition(), name.getText().toString());
+                }
+            });
+            /*
             name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
                 @Override
                 public void onFocusChange(View v, boolean hasFocus) {
                     listener.onEdit(getAdapterPosition(), name.getText().toString());
                 }
             });
+
+             */
             name = itemView.findViewById(R.id.ingredient_text);
         }
     }

@@ -50,15 +50,24 @@ public class TagsRepository {
 
     public void addRecipe(Recipe newRecipe) {
         recipeDataSet.add(newRecipe);
+        for (int i = 0; i < newRecipe.getTags().size(); i++) {
+            if(!tagDataSet.contains(newRecipe.getTags().get(i))){
+                tagDataSet.add(newRecipe.getTags().get(i));
+                System.out.println("adding tag ------------------------------------------------------");
+            }
+        }
+        /*
         for (int i = 0; i < recipeDataSet.size(); i++) {
             for (int j = 0; j < recipeDataSet.get(i).getIngredients().size(); j++) {
                 for (int k = 0; k < tagDataSet.size(); k++) {
-                    if (!tagDataSet.get(k).equals(recipeDataSet.get(i).getTags().get(j))) {
-                        tagDataSet.add(recipeDataSet.get(i).getTags().get(j));
+                    if (!tagDataSet.get(k).equals(newRecipe.getTags().get(j))) {
+
                     }
                 }
             }
         }
+
+         */
     }
 
 

@@ -1,6 +1,7 @@
 package com.example.version2myrecipe.views;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -9,19 +10,20 @@ import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.version2myrecipe.R;
 import com.example.version2myrecipe.viewModels.MainViewModel;
 import com.example.version2myrecipe.adapter.TagAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ActivityMain extends AppCompatActivity implements TagAdapter.OnListItemClickListener {
+public class ActivityMain extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     TextView toolbarTitle;
     Toolbar toolbar;
     MainViewModel mainViewModel;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +34,32 @@ public class ActivityMain extends AppCompatActivity implements TagAdapter.OnList
         mainViewModel.init();
 
         //Toolbar
+
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = null;
+                toolbarTitle.setText("Recipes");
+                fragment = new FragmentTags(getSupportFragmentManager(), toolbarTitle, getSupportActionBar());
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+                getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            }
+        });
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        toolbarTitle = findViewById(R.id.toolbar_title);
+        toolbarTitle.setText("Recipes");
+
         //Bottom navigation button
         bottomNavigationView = findViewById(R.id.bottomView);
-        toolbarTitle = findViewById(R.id.toolbar_title);
         bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavMethod);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        toolbarTitle.setText("Recipes");
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentTags(getSupportFragmentManager(), toolbarTitle)).commit();
+
+        //Set Default fragment
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentTags(getSupportFragmentManager(), toolbarTitle, getSupportActionBar())).commit();
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener bottomNavMethod = new
             BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
@@ -58,8 +72,8 @@ public class ActivityMain extends AppCompatActivity implements TagAdapter.OnList
                             break;
                         case R.id.recipes:
                             toolbarTitle.setText("Recipes");
-                            fragment = new FragmentTags(getSupportFragmentManager(), toolbarTitle);
-
+                            fragment = new FragmentTags(getSupportFragmentManager(), toolbarTitle, getSupportActionBar());
+                            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                             break;
                         case R.id.grocery:
                             toolbarTitle.setText("Grocery");
@@ -74,15 +88,6 @@ public class ActivityMain extends AppCompatActivity implements TagAdapter.OnList
                     return true;
                 }
             };
-
-    @Override
-    public void onClick(int position) {
-        Fragment fragment = null;
-        fragment = new FragmentTagExpanded(mainViewModel.getTag(position));
-        toolbarTitle.setText(mainViewModel.getTag(position).getName());
-        //Toast.makeText(getApplicationContext(), ""+ position,Toast.LENGTH_SHORT).show();
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -91,8 +91,10 @@ public class ActivityCreateRecipe extends AppCompatActivity implements  EmptyIng
 
     @Override
     public void onEdit(int position, String text) {
+        System.out.println(position+ text);
         createRecipeViewModel.ingredientUpdated(position, text);
-        Toast.makeText(getApplicationContext(), ""+ position,Toast.LENGTH_SHORT).show();
+        Ingredient selected = ingredients.get(position);
+        selected.setRaw(text);
     }
 
     @Override

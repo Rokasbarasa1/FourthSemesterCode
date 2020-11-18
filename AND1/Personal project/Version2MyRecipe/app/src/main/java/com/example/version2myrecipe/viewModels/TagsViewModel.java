@@ -27,4 +27,8 @@ public class TagsViewModel extends ViewModel {
     public Tag getTag(int position) {
         return repo.getTag(position);
     }
+
+    public void refreshTags() {
+        tags = repo.getTags();
+    }
 }
