@@ -14,6 +14,7 @@ public class Ingredient {
     }
 
     public Ingredient(String name, double quantity, String unitOfMeassure) {
+        this.rawString = name + " " + quantity;
         this.name = name;
         this.quantity = quantity;
         this.unitOfMeassure = unitOfMeassure;

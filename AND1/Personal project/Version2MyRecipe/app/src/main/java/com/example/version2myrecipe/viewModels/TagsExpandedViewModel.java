@@ -1,6 +1,5 @@
 package com.example.version2myrecipe.viewModels;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -14,15 +13,19 @@ public class TagsExpandedViewModel extends ViewModel {
     private MutableLiveData<List<Recipe>> recipes;
     private TagsRepository repo;
 
-    public void init(){
+    public void init(Tag expandedTag){
         if(recipes != null){
             return;
         }
         repo = TagsRepository.getInstance();
-        recipes = repo.getRecipes();
+        recipes = repo.getRecipesByTag(expandedTag);
     }
 
-    public LiveData<List<Recipe>> getRecipes(){
+    public MutableLiveData<List<Recipe>> getRecipesByTag(Tag expandedTag){
+        return repo.getRecipesByTag(expandedTag);
+    }
+
+    public MutableLiveData<List<Recipe>> getRecipes(){
         return recipes;
     }
 }

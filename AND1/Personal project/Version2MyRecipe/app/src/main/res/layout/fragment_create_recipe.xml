@@ -13,11 +13,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <include
-                layout ="@layout/toolbar"
-                app:menu="@menu/toolbar_menu" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -88,7 +83,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/rv_ingredients"/>
+                    android:id="@+id/rv_new_recipe_ingredients"/>
 
 
             </LinearLayout>

@@ -11,14 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.version2myrecipe.R;
 import com.example.version2myrecipe.models.Ingredient;
-import com.example.version2myrecipe.adapter.IngredientAdapter;
+import com.example.version2myrecipe.adapter.AdapterGroceryIngredient;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentGrocery extends Fragment {
     RecyclerView ingredientList;
-    IngredientAdapter ingredientAdapter;
+    AdapterGroceryIngredient adapterGroceryIngredient;
     List<Ingredient> ingredients;
 
     public FragmentGrocery() {
@@ -39,8 +39,8 @@ public class FragmentGrocery extends Fragment {
 
         ingredientList = rootView.findViewById(R.id.rv_grocery);
         ingredientList.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
-        ingredientAdapter = new IngredientAdapter(ingredients);
-        ingredientList.setAdapter(ingredientAdapter);
+        adapterGroceryIngredient = new AdapterGroceryIngredient(ingredients);
+        ingredientList.setAdapter(adapterGroceryIngredient);
 
         return rootView;
     }

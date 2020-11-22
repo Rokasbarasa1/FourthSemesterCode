@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
@@ -21,13 +20,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.version2myrecipe.R;
 import com.example.version2myrecipe.models.Tag;
-import com.example.version2myrecipe.adapter.TagAdapter;
+import com.example.version2myrecipe.adapter.AdapterTag;
 import com.example.version2myrecipe.viewModels.TagsViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-public class FragmentTags extends Fragment implements TagAdapter.OnListItemClickListener {
+public class FragmentTags extends Fragment implements AdapterTag.OnListTagClickListener {
     Animation rotateOpen;
     Animation rotateClose;
     Animation fromBottom;
@@ -37,11 +36,12 @@ public class FragmentTags extends Fragment implements TagAdapter.OnListItemClick
     FloatingActionButton create_btn;
     boolean clicked = false;
     RecyclerView tagList;
-    TagAdapter tagAdapter;
+    AdapterTag adapterTag;
     TagsViewModel tagsViewModel;
     FragmentManager supportFragmentManager;
     TextView toolbarTitle;
     ActionBar upArrow;
+
     public FragmentTags(FragmentManager supportFragmentManager, TextView toolbarTitle, ActionBar upArrow) {
         this.supportFragmentManager = supportFragmentManager;
         this.toolbarTitle = toolbarTitle;
@@ -73,14 +73,14 @@ public class FragmentTags extends Fragment implements TagAdapter.OnListItemClick
         tagsViewModel.getTags().observe(this, new Observer<List<Tag>>() {
             @Override
             public void onChanged(List<Tag> tags) {
-                tagAdapter.notifyDataSetChanged();
+                adapterTag.notifyDataSetChanged();
             }
         });
-        tagList = rootView.findViewById(R.id.rv);
+        tagList = rootView.findViewById(R.id.rv_tags);
         tagList.hasFixedSize();
         tagList.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
-        tagAdapter = new TagAdapter(tagsViewModel.getTags().getValue(), this);
-        tagList.setAdapter(tagAdapter);
+        adapterTag = new AdapterTag(tagsViewModel.getTags().getValue(), this);
+        tagList.setAdapter(adapterTag);
     }
 
     private void setUpExpandableFloatingButton(final View rootView){
@@ -108,9 +108,11 @@ public class FragmentTags extends Fragment implements TagAdapter.OnListItemClick
         create_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(rootView.getContext(), "Clicked create button", Toast.LENGTH_SHORT).show();
-                Intent menuIntent = new Intent(getActivity(), ActivityCreateRecipe.class);
-                startActivity(menuIntent);
+                Fragment fragment = null;
+                fragment = new FragmentCreateRecipe();
+                toolbarTitle.setText("Create recipe");
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+                upArrow.setDisplayHomeAsUpEnabled(true);
             }
         });
     }
@@ -150,9 +152,8 @@ public class FragmentTags extends Fragment implements TagAdapter.OnListItemClick
     @Override
     public void onClick(int position) {
         Fragment fragment = null;
-        fragment = new FragmentTagExpanded(tagsViewModel.getTag(position));
+        fragment = new FragmentTagExpanded(supportFragmentManager, toolbarTitle, upArrow, tagsViewModel.getTag(position));
         toolbarTitle.setText(tagsViewModel.getTag(position).getName());
-        //Toast.makeText(getApplicationContext(), ""+ position,Toast.LENGTH_SHORT).show();
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
         upArrow.setDisplayHomeAsUpEnabled(true);
     }

@@ -15,25 +15,25 @@ import com.example.version2myrecipe.models.TextChangedListener;
 
 import java.util.List;
 
-public class EmptyIngredientAdapter extends RecyclerView.Adapter<EmptyIngredientAdapter.ViewHolder>{
+public class AdapterNewRecipeIngredient extends RecyclerView.Adapter<AdapterNewRecipeIngredient.ViewHolder>{
     List<Ingredient> ingredients;
     OnEditTextListener listener;
 
-    public EmptyIngredientAdapter(List<Ingredient> ingredients, OnEditTextListener listener){
+    public AdapterNewRecipeIngredient(List<Ingredient> ingredients, OnEditTextListener listener){
         this.ingredients = ingredients;
         this.listener = listener;
     }
 
     @NonNull
     @Override
-    public EmptyIngredientAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdapterNewRecipeIngredient.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.piece_create_ingredient, parent, false);
-        return new EmptyIngredientAdapter.ViewHolder(view);
+        return new AdapterNewRecipeIngredient.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull EmptyIngredientAdapter.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull AdapterNewRecipeIngredient.ViewHolder viewHolder, int position) {
         viewHolder.name.setText(ingredients.get(position).getRaw());
     }
 
@@ -46,23 +46,13 @@ public class EmptyIngredientAdapter extends RecyclerView.Adapter<EmptyIngredient
         EditText name;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.ingredient_text);
+            name = itemView.findViewById(R.id.create_ingredient_text);
             name.addTextChangedListener(new TextChangedListener<EditText>(name) {
                 @Override
                 public void onTextChanged(EditText target, Editable s) {
                     listener.onEdit(getAdapterPosition(), name.getText().toString());
                 }
             });
-            /*
-            name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                @Override
-                public void onFocusChange(View v, boolean hasFocus) {
-                    listener.onEdit(getAdapterPosition(), name.getText().toString());
-                }
-            });
-
-             */
-            name = itemView.findViewById(R.id.ingredient_text);
         }
     }
 

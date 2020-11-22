@@ -16,9 +16,4 @@ public class MainViewModel extends ViewModel {
             return;
         }
         repo = TagsRepository.getInstance();
-    }
-
-    public Tag getTag(int index){
-        return repo.getTag(index);
-    }
-}
+    }}

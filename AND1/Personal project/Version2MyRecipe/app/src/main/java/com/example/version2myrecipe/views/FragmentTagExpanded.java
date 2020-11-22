@@ -4,7 +4,9 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,20 +17,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.version2myrecipe.R;
-import com.example.version2myrecipe.adapter.RecipeAdapter;
-import com.example.version2myrecipe.adapter.TagAdapter;
+import com.example.version2myrecipe.adapter.AdapterRecipe;
 import com.example.version2myrecipe.models.Recipe;
 import com.example.version2myrecipe.models.Tag;
 import com.example.version2myrecipe.viewModels.TagsExpandedViewModel;
-import com.example.version2myrecipe.viewModels.TagsViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-public class FragmentTagExpanded extends Fragment {
+public class FragmentTagExpanded extends Fragment implements AdapterRecipe.OnListRecipeClickListener {
     Animation rotateOpen;
     Animation rotateClose;
     Animation fromBottom;
@@ -38,12 +38,18 @@ public class FragmentTagExpanded extends Fragment {
     FloatingActionButton create_btn;
     boolean clicked = false;
     RecyclerView recipeList;
-    RecipeAdapter recipeAdapter;
+    AdapterRecipe adapterRecipe;
     TagsExpandedViewModel tagsExpandedViewModel;
     Tag currentTag;
+    FragmentManager supportFragmentManager;
+    TextView toolbarTitle;
+    ActionBar upArrow;
 
-    public FragmentTagExpanded(Tag currentTag) {
+    public FragmentTagExpanded(FragmentManager supportFragmentManager, TextView toolbarTitle, ActionBar upArrow, Tag currentTag) {
         this.currentTag = currentTag;
+        this.supportFragmentManager = supportFragmentManager;
+        this.toolbarTitle = toolbarTitle;
+        this.upArrow = upArrow;
     }
 
     @Override
@@ -60,19 +66,19 @@ public class FragmentTagExpanded extends Fragment {
 
     private void initRecipesRecyclerView(View rootView){
         tagsExpandedViewModel = ViewModelProviders.of(this).get(TagsExpandedViewModel.class);
-        tagsExpandedViewModel.init();
+        tagsExpandedViewModel.init(currentTag);
         tagsExpandedViewModel.getRecipes().observe(this, new Observer<List<Recipe>>() {
             @Override
             public void onChanged(List<Recipe> tags) {
-                recipeAdapter.notifyDataSetChanged();
+                adapterRecipe.notifyDataSetChanged();
             }
         });
 
         recipeList = rootView.findViewById(R.id.rv_expanded);
         recipeList.hasFixedSize();
         recipeList.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
-        recipeAdapter = new RecipeAdapter(tagsExpandedViewModel.getRecipes().getValue());
-        recipeList.setAdapter(recipeAdapter);
+        adapterRecipe = new AdapterRecipe(tagsExpandedViewModel.getRecipes().getValue(), this);
+        recipeList.setAdapter(adapterRecipe);
     }
 
     public void setTag(Tag currentTag){
@@ -104,12 +110,15 @@ public class FragmentTagExpanded extends Fragment {
         create_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(rootView.getContext(), "Clicked create button", Toast.LENGTH_SHORT).show();
-                Intent menuIntent = new Intent(getActivity(), ActivityCreateRecipe.class);
-                startActivity(menuIntent);
+                Fragment fragment = null;
+                fragment = new FragmentCreateRecipe();
+                toolbarTitle.setText("Create recipe");
+                supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+                upArrow.setDisplayHomeAsUpEnabled(true);
             }
         });
     }
+
     private void onAddButtonClicked() {
         setVisibility(clicked);
         setAnimation(clicked);
@@ -118,6 +127,7 @@ public class FragmentTagExpanded extends Fragment {
         else
             clicked = false;
     }
+
     @SuppressLint("RestrictedApi")
     private void setVisibility(Boolean clicked) {
         if(!clicked){
@@ -128,6 +138,7 @@ public class FragmentTagExpanded extends Fragment {
             create_btn.setVisibility(View.INVISIBLE);
         }
     }
+
     private void setAnimation(Boolean clicked) {
         if(!clicked){
             trash_btn.startAnimation(fromBottom);
@@ -138,5 +149,14 @@ public class FragmentTagExpanded extends Fragment {
             create_btn.startAnimation(toBottom);
             add_btn.startAnimation(rotateClose);
         }
+    }
+
+    @Override
+    public void onClick(int position, String name) {
+        Fragment fragment = null;
+        fragment = new FragmentSeeRecipe(name);
+        toolbarTitle.setText("View recipe");
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+        upArrow.setDisplayHomeAsUpEnabled(true);
     }
 }

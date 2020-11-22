@@ -24,7 +24,6 @@
         app:layout_constraintTop_toBottomOf="@+id/loginTextEmailAddress"
         app:layout_constraintVertical_bias="0.0" />
 
-
     <EditText
         android:id="@+id/loginTextEmailAddress"
         android:layout_width="350dp"

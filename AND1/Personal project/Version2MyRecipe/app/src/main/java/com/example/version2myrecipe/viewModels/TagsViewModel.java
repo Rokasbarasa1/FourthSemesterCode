@@ -10,7 +10,7 @@ import com.example.version2myrecipe.repository.TagsRepository;
 import java.util.List;
 
 public class TagsViewModel extends ViewModel {
-    private MutableLiveData<List<Tag>> tags;
+    private LiveData<List<Tag>> tags;
     private TagsRepository repo;
 
     public void init(){

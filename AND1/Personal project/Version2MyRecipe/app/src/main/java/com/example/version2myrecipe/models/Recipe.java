@@ -12,6 +12,8 @@ public class Recipe {
     private ArrayList<Tag> tags;
 
     public Recipe(String name, int prepTime, int cookTime, int servingSize, ArrayList<Ingredient> ingredients, String description, ArrayList<Tag> tags) {
+        if(name.equals("") || prepTime < 1 || cookTime < 1 || servingSize < 1|| ingredients.size() == 0 || tags.size() == 0)
+            throw new IllegalArgumentException();
         this.name = name;
         this.prepTime = prepTime;
         this.cookTime = cookTime;
@@ -31,5 +33,25 @@ public class Recipe {
 
     public String getName() {
         return name;
+    }
+
+    public int getPrepTime() {
+        return prepTime;
+    }
+
+    public int getCookTime() {
+        return cookTime;
+    }
+
+    public int getServingSize() {
+        return servingSize;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

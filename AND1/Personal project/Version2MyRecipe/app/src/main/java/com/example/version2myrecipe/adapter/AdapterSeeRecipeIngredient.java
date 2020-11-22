@@ -13,23 +13,24 @@ import com.example.version2myrecipe.models.Ingredient;
 
 import java.util.List;
 
-public class IngredientAdapter extends RecyclerView.Adapter<IngredientAdapter.ViewHolder>{
+public class AdapterSeeRecipeIngredient extends RecyclerView.Adapter<AdapterSeeRecipeIngredient.ViewHolder>{
     List<Ingredient> ingredients;
-    public IngredientAdapter(List<Ingredient> ingredients){
+
+    public AdapterSeeRecipeIngredient(List<Ingredient> ingredients){
         this.ingredients = ingredients;
     }
 
     @NonNull
     @Override
-    public IngredientAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdapterSeeRecipeIngredient.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.piece_grocery_ingredient, parent, false);
-        return new IngredientAdapter.ViewHolder(view);
+        View view = inflater.inflate(R.layout.piece_see_ingredient, parent, false);
+        return new AdapterSeeRecipeIngredient.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull IngredientAdapter.ViewHolder viewHolder, int position) {
-        viewHolder.name.setText(ingredients.get(position).getAsString());
+    public void onBindViewHolder(@NonNull AdapterSeeRecipeIngredient.ViewHolder viewHolder, int position) {
+        viewHolder.name.setText(ingredients.get(position).getRaw());
     }
 
     @Override
@@ -41,7 +42,7 @@ public class IngredientAdapter extends RecyclerView.Adapter<IngredientAdapter.Vi
         TextView name;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.ingredient_text_grocery);
+            name = itemView.findViewById(R.id.see_ingredient_text);
         }
     }
 }
