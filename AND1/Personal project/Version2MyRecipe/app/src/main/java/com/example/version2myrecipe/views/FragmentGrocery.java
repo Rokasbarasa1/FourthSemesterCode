@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,11 +18,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentGrocery extends Fragment {
-    RecyclerView ingredientList;
-    AdapterGroceryIngredient adapterGroceryIngredient;
-    List<Ingredient> ingredients;
+    private RecyclerView ingredientList;
+    private AdapterGroceryIngredient adapterGroceryIngredient;
+    private List<Ingredient> ingredients;
+    private FragmentTransaction ft;
+
 
     public FragmentGrocery() {
+
     }
 
     @Override

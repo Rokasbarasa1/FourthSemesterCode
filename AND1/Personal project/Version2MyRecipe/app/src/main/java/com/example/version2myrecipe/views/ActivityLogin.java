@@ -13,11 +13,10 @@ import android.widget.Toast;
 import com.example.version2myrecipe.R;
 
 public class ActivityLogin extends AppCompatActivity {
-
-    EditText email;
-    EditText password;
-    Button login;
-    ImageView imageView;
+    private EditText email;
+    private EditText password;
+    private Button login;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

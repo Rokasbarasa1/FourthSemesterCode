@@ -20,7 +20,7 @@ public class mainCoins {
         basicValues.put(10,1);
         basicValues.put(22,1);
 
-        for (int i = 0; i < 11110000; i++) {
+        for (int i = 0; i < 111; i++) {
             int minumum = getMinimumChange(i);
 
             System.out.println("The minimum number of coins you can get with " + i + " is: " + minumum);

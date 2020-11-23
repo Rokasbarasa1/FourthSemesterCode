@@ -10,6 +10,7 @@ import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
+import com.example.version2myrecipe.ActivityMain;
 import com.example.version2myrecipe.R;
 
 import org.hamcrest.Description;

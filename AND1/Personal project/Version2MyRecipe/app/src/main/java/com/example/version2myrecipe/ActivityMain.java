@@ -1,9 +1,11 @@
-package com.example.version2myrecipe.views;
+package com.example.version2myrecipe;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -14,24 +16,29 @@ import android.widget.TextView;
 
 import com.example.version2myrecipe.R;
 import com.example.version2myrecipe.viewModels.MainViewModel;
+import com.example.version2myrecipe.views.FragmentCalendar;
+import com.example.version2myrecipe.views.FragmentGrocery;
+import com.example.version2myrecipe.views.FragmentRandom;
+import com.example.version2myrecipe.views.FragmentTags;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ActivityMain extends AppCompatActivity {
-    BottomNavigationView bottomNavigationView;
-    TextView toolbarTitle;
-    Toolbar toolbar;
-    MainViewModel mainViewModel;
+    private BottomNavigationView bottomNavigationView;
+    private TextView toolbarTitle;
+    private Toolbar toolbar;
+    private MainViewModel viewModel;
+    private FragmentTransaction ft;
+    private FragmentManager fm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-        mainViewModel.init();
+        viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        viewModel.init();
 
         //Toolbar
-
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -47,13 +54,33 @@ public class ActivityMain extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         toolbarTitle = findViewById(R.id.toolbar_title);
-        toolbarTitle.setText("Recipes");
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("trying to pop stack");
+                getSupportFragmentManager().popBackStackImmediate();
+            }
+        });
+
 
         //Bottom navigation button
         bottomNavigationView = findViewById(R.id.bottomView);
         bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavMethod);
 
+        //For backstack fragment management
+        ft = getSupportFragmentManager().beginTransaction();
+        fm = getSupportFragmentManager();
+
+        fm.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+            @Override
+            public void onBackStackChanged() {
+                System.out.println("Kaka");
+            }
+        });
+
         //Set Default fragment
+        toolbarTitle.setText("Recipes");
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentTags(getSupportFragmentManager(), toolbarTitle, getSupportActionBar())).commit();
     }
 
@@ -81,7 +108,10 @@ public class ActivityMain extends AppCompatActivity {
                             fragment = new FragmentRandom();
                             break;
                     }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+                    ft = getSupportFragmentManager().beginTransaction();
+                    ft.add(R.id.fragment_container, fragment);
+                    ft.addToBackStack(null);
+                    ft.commit();
                     return true;
                 }
             };

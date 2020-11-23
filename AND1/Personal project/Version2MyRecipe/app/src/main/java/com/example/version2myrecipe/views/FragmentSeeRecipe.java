@@ -3,6 +3,7 @@ package com.example.version2myrecipe.views;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,19 +22,20 @@ import com.example.version2myrecipe.viewModels.SeeRecipeViewModel;
 import java.util.List;
 
 public class FragmentSeeRecipe extends Fragment {
-    Recipe selectedRecipe;
-    TextView name;
-    TextView prepTime;
-    TextView cookTime;
-    TextView servingSize;
-    TextView description;
-    TextView tags;
-    RecyclerView ingredientList;
-    AdapterSeeRecipeIngredient ingredientAdapter;
-    List<Ingredient> ingredients;
-    SeeRecipeViewModel viewModel;
-    View rootView;
-    String nameOfRecipe;
+    private Recipe selectedRecipe;
+    private TextView name;
+    private TextView prepTime;
+    private TextView cookTime;
+    private TextView servingSize;
+    private TextView description;
+    private TextView tags;
+    private RecyclerView ingredientList;
+    private AdapterSeeRecipeIngredient ingredientAdapter;
+    private List<Ingredient> ingredients;
+    private SeeRecipeViewModel viewModel;
+    private View rootView;
+    private String nameOfRecipe;
+
 
     public FragmentSeeRecipe(String recipe) {
         nameOfRecipe = recipe;

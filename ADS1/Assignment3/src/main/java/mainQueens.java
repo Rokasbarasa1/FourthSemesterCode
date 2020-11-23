@@ -115,5 +115,6 @@ public class mainQueens {
             tempCollumnRight++;
             tempCollumnLeft--;
         }
+
     }
 }
