@@ -18,7 +18,7 @@ public class mainQueens {
             System.out.print("\n");
         }
         //Actual assignment
-        for (int i = 4; i < 13; i++) {
+        for (int i = 4; i < 16; i++) {
             System.out.println("N queens for a "+ i + " by " + i + " board: " + nQueens(i)+ "\n");
         }
     }

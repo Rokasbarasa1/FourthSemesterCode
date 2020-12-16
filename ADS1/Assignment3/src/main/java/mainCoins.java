@@ -1,8 +1,9 @@
 import java.util.HashMap;
 
 public class mainCoins {
-
+    //For all past values including the coin values. Holds how many coins were needed for the value.
     static HashMap<Integer,Integer> pastValues;
+    //Just for possible coin values
     static HashMap<Integer,Integer> basicValues;
     public static void main(String[] args) {
         pastValues = new HashMap<Integer, Integer>();
@@ -17,6 +18,7 @@ public class mainCoins {
         //Coin values and calculated values as well. For quick finding
         basicValues.put(1,1);
         basicValues.put(7,1);
+        
         basicValues.put(10,1);
         basicValues.put(22,1);
 
@@ -27,6 +29,7 @@ public class mainCoins {
         }
     }
 
+    //Recursive method. Checks every single value possible and then backtracks to return the best one.
     static int getMinimumChange(int money){
         if(money == 0)
             return 0;
