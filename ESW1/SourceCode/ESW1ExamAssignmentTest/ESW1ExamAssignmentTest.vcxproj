@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{f41f0c5e-2c34-4334-9e19-189b717445d2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\Rokas\Desktop\ESW1 Assignment\ESW1ExamAssignment;$(IncludePath);.;$(ProjectDir);C:\FreeRTOSv10.4.1\FreeRTOS\Source\include;C:\FreeRTOSv10.4.1\FreeRTOS\Source\portable\MSVC-MingW</IncludePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\croutine.c" />
+    <ClCompile Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\event_groups.c" />
+    <ClCompile Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\list.c" />
+    <ClCompile Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\portable\MemMang\heap_4.c" />
+    <ClCompile Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\portable\MSVC-MingW\port.c" />
+    <ClCompile Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\queue.c" />
+    <ClCompile Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\stream_buffer.c" />
+    <ClCompile Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\tasks.c" />
+    <ClCompile Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\timers.c" />
+    <ClCompile Include="..\ESW1ExamAssignment\AppController.c" />
+    <ClCompile Include="..\ESW1ExamAssignment\MessagePayload.c" />
+    <ClCompile Include="..\ESW1ExamAssignment\Transmitter.c" />
+    <ClCompile Include="..\ESW1ExamAssignment\WaterLevelSensor.c" />
+    <ClCompile Include="..\ESW1ExamAssignment\WaterTemperatureSensor.c" />
+    <ClCompile Include="AppControllerTest.cpp" />
+    <ClCompile Include="MessagePayloadTest.cpp" />
+    <ClCompile Include="TransmitterTest.cpp" />
+    <ClCompile Include="WaterLevelSensorTest.cpp" />
+    <ClCompile Include="WaterTemperatureSensorTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\atomic.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\croutine.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\deprecated_definitions.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\event_groups.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\FreeRTOS.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\list.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\message_buffer.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\mpu_prototypes.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\mpu_wrappers.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\portable.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\projdefs.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\queue.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\semphr.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\StackMacros.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\stack_macros.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\stream_buffer.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\task.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\include\timers.h" />
+    <ClInclude Include="..\..\..\..\..\FreeRTOSv10.4.1\FreeRTOS\Source\portable\MSVC-MingW\portmacro.h" />
+    <ClInclude Include="..\ESW1ExamAssignment\AppController.h" />
+    <ClInclude Include="..\ESW1ExamAssignment\definitions.h" />
+    <ClInclude Include="..\ESW1ExamAssignment\FreeRTOSConfig.h" />
+    <ClInclude Include="..\ESW1ExamAssignment\MessagePayload.h" />
+    <ClInclude Include="..\ESW1ExamAssignment\Transmitter.h" />
+    <ClInclude Include="..\ESW1ExamAssignment\WaterLevelSensor.h" />
+    <ClInclude Include="..\ESW1ExamAssignment\WaterTemperatureSensor.h" />
+  </ItemGroup>
+  <ItemDefinitionGroup />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\ESW1ExamAssignment\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.3\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets" Condition="Exists('..\ESW1ExamAssignment\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.3\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets')" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>X64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>X64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\ESW1ExamAssignment\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.3\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\ESW1ExamAssignment\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.3\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets'))" />
+  </Target>
+</Project>

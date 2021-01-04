@@ -1,0 +1,29 @@
+#pragma once
+#ifndef DEFINITIONS_H
+#define DEFINITIONS_H
+
+#include <FreeRTOSConfig.h>
+
+// define priorities
+#define TASK_WATER_TEMPERATURE_TASK_PRIORITY	( tskIDLE_PRIORITY + 2 )
+#define TASK_WATER_LEVEL_TASK_PRIORITY			( tskIDLE_PRIORITY + 2 )
+#define TASK_APP_CONTROLER_TASK_PRIORITY		( tskIDLE_PRIORITY + 1 )
+#define TASK_TRANSMITTER_TASK_PRIORITY			( tskIDLE_PRIORITY + 3 )
+
+// define task stack for each task
+#define TASK_WATER_TEMPERATURE_TASK_STACK		( configMINIMAL_STACK_SIZE )
+#define TASK_WATER_LEVEL_TASK_STACK				( configMINIMAL_STACK_SIZE )
+#define TASK_APP_CONTROLER_TASK_STACK			( configMINIMAL_STACK_SIZE )
+#define TASK_TRANSMITTER_TASK_STACK				( configMINIMAL_STACK_SIZE )
+
+// define time constraints
+//Ms are set to half of what they actually are
+#define DEF_DELAY_TASK_WATER_TEMPERATURE		pdMS_TO_TICKS(37.5)
+#define DEF_DELAY_TASK_WATER_LEVEL_MEASURE		pdMS_TO_TICKS(50)
+#define DEF_DELAY_TASK_APP_CONTROLER			pdMS_TO_TICKS(500)
+
+// define data ready event groups bit flags
+#define DEF_BIT_DATA_READY_WATER_LEVEL			(1 << 0)
+#define DEF_BIT_DATA_READY_WATER_TEMPERATURE	(1 << 1)
+#define DEF_BIT_DATA_READY_ALL					(DEF_BIT_DATA_READY_WATER_LEVEL | DEF_BIT_DATA_READY_WATER_TEMPERATURE)
+#endif
