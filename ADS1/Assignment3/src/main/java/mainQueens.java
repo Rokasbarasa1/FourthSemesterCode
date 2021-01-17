@@ -36,10 +36,13 @@ public class mainQueens {
     static int placeQueens(int[][] chessBoard, int row){
         int completed = 0;
         for (int i = 0; i < chessBoard[row].length; i++) {
+            //This if stamement determines if the atempt is good or not
             if(chessBoard[row][i] == 0){
+                //Horrible memory usage
                 int[][] copyChessBoard = getCopyOfArrayOfArrays(chessBoard);
                 doPosition(copyChessBoard, row, i);
                 if(tryRow(copyChessBoard, row+1)){
+                    //The reason completed is added to the result of the pace quens is that this may be top level where a total of n loops are made so each one could have many results.
                     completed = completed +  placeQueens(copyChessBoard, row+1);
                 } else{
                     completed++;

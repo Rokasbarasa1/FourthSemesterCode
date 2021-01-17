@@ -1,22 +1,23 @@
 import java.util.HashMap;
 
 public class Main {
+    private static HashMap<Integer, Integer> lengthPriceAdded;
 
-    private static HashMap<Integer, Integer> lengthPrice;
 
     public static void main(String[] args) {
-        lengthPrice = new HashMap<Integer,Integer>();
-        lengthPrice.put(1,1);
-        lengthPrice.put(2,5);
-        lengthPrice.put(3,8);
-        lengthPrice.put(4,9);
-        lengthPrice.put(5,10);
-        lengthPrice.put(6,17);
-        lengthPrice.put(7,17);
-        lengthPrice.put(8,20);
-        lengthPrice.put(9,24);
-        lengthPrice.put(10,30);
-        for (int i = 0; i < 200; i++) {
+        lengthPriceAdded = new HashMap<Integer,Integer>();
+        lengthPriceAdded.put(1,1);
+        lengthPriceAdded.put(2,5);
+        lengthPriceAdded.put(3,8);
+        lengthPriceAdded.put(4,9);
+        lengthPriceAdded.put(5,10);
+        lengthPriceAdded.put(6,17);
+        //lengthPriceAdded.put(7,17);
+        //lengthPriceAdded.put(8,20);
+        //lengthPriceAdded.put(9,24);
+        //lengthPriceAdded.put(10,30);
+
+        for (int i = 0; i < 30; i++) {
             int cost = costOfSplit(i);
             System.out.println("Cost of length "+ i + " is "+ cost);
             // write your code here
@@ -24,30 +25,24 @@ public class Main {
     }
 
     private static int costOfSplit(int length) {
-        if(length == 0){
+        if(length == 0)
             return 0;
-        }else if(lengthPrice.containsKey(length)){
-            return lengthPrice.get(length);
-        }else if((length % 2) == 0){
-            for (int i = length; i >= 0; i--) {
-                if ((i % 2) == 0 && lengthPrice.containsKey(i)) {
-                    if((length%i) == 0){
-                        int divisionResult = length/i;
-                        int result = divisionResult * lengthPrice.get(i);
-                        lengthPrice.put(length, result);
-                        return lengthPrice.get(length);
-                    }
-                }
+        else if(lengthPriceAdded.containsKey(length))
+            return lengthPriceAdded.get(length);
+
+        int maximum = 0;
+        for (int key : lengthPriceAdded.keySet()) {
+            if(length>key){
+                int tempMax;
+                if(lengthPriceAdded.get(length-key) != null)
+                    tempMax = lengthPriceAdded.get(key) + lengthPriceAdded.get(length-key);
+                else
+                    tempMax = lengthPriceAdded.get(key) + costOfSplit(length-key);
+                if(tempMax > maximum)
+                    maximum = tempMax;
             }
-            return 0;
-        }else {
-            return 0;//Check if prime
         }
+        lengthPriceAdded.put(length,maximum);
+        return maximum;
     }
-
-
-    private static HashMap<Integer, Integer> sortHashMapByKey(){
-        return null;
-    }
-
 }
